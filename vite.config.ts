@@ -6,7 +6,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: process.env.GITHUB_PAGES === "true" ? "/try-ai-1490haha/" : "/",
+  base: process.env.GITHUB_PAGES === "true" ? "/try-moonjab-com/" : "/",
   server: {
     host: "::",
     port: 8080,
