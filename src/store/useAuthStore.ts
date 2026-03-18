@@ -80,10 +80,13 @@ export const useAuthStore = create<AuthState>()(
       },
       
       signInWithGoogle: async () => {
-        const { error } = await lovable.auth.signInWithOAuth('google', {
-          redirect_uri: `${window.location.origin}/auth`,
-          extraParams: {
-            prompt: 'select_account',
+        const { error } = await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: `${window.location.origin}/auth`,
+            queryParams: {
+              prompt: 'select_account',
+            },
           },
         });
         
