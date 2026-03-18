@@ -13,10 +13,12 @@ export const ProtectedRoute = ({ children, requireOnboarding = false }: Protecte
   const { user, session, isAuthenticated, isGuestMode } = useAuthStore();
   const location = useLocation();
   const [checking, setChecking] = useState(true);
+  const [sessionExists, setSessionExists] = useState(false);
 
   useEffect(() => {
     const checkAuth = async () => {
-      await supabase.auth.getSession();
+      const { data } = await supabase.auth.getSession();
+      setSessionExists(!!data.session);
       setChecking(false);
     };
 
@@ -31,7 +33,7 @@ export const ProtectedRoute = ({ children, requireOnboarding = false }: Protecte
     );
   }
 
-  const hasSession = !!session;
+  const hasSession = sessionExists || !!session;
 
   if (!isGuestMode && !hasSession && !isAuthenticated) {
     return <Navigate to="/login" state={{ from: location }} replace />;
