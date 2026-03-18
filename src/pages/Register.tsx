@@ -30,10 +30,6 @@ const Register = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleGoogleSignup = async () => {
-    try {await useAuthStore.getState().signInWithGoogle();}
-    catch {toast.error('Error al conectar con Google');}
-  };
 
   const getPasswordStrength = () => {
     const p = formData.password;
