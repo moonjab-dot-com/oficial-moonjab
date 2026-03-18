@@ -9,12 +9,30 @@ type AccessRoleInput = {
   profileUserRole?: string | null;
 };
 
+export function mapProfileRoleToAccessRole(profileRole?: string | null): AccessRole | null {
+  switch (profileRole) {
+    case 'trial':
+      return 'trial_user';
+    case 'free':
+      return 'free_user';
+    case 'premium':
+      return 'premium_user';
+    default:
+      return null;
+  }
+}
+
 export function getAccessRole({ isGuestMode, user, profileUserRole }: AccessRoleInput): AccessRole {
   if (isGuestMode || user?.id?.startsWith('guest_') || user?.plan === 'trial') {
     return 'trial_user';
   }
 
-  if (profileUserRole === 'premium_user' || user?.plan === 'premium') {
+  const roleFromProfile = mapProfileRoleToAccessRole(profileUserRole);
+  if (roleFromProfile) {
+    return roleFromProfile;
+  }
+
+  if (user?.plan === 'premium') {
     return 'premium_user';
   }
 
@@ -22,7 +40,7 @@ export function getAccessRole({ isGuestMode, user, profileUserRole }: AccessRole
 }
 
 export function getDashboardBasePath(accessRole: AccessRole): string {
-  return accessRole === 'trial_user' ? '/usuariostest/dashboard' : '/dashboard';
+  return accessRole === 'trial_user' ? '/test/dashboard' : '/dashboard';
 }
 
 export function getDashboardPathForRole(input: AccessRoleInput, subPath = ''): string {
@@ -31,9 +49,14 @@ export function getDashboardPathForRole(input: AccessRoleInput, subPath = ''): s
 }
 
 export function mapDashboardPath(pathname: string, targetRole: AccessRole): string {
-  const currentBase = pathname.startsWith('/usuariostest/dashboard')
-    ? '/usuariostest/dashboard'
+  const isLegacyTrialPath = pathname.startsWith('/usuariostest/dashboard');
+  const isTrialPath = pathname.startsWith('/test/dashboard') || isLegacyTrialPath;
+  const currentBase = isTrialPath
+    ? isLegacyTrialPath
+      ? '/usuariostest/dashboard'
+      : '/test/dashboard'
     : '/dashboard';
+
   const targetBase = getDashboardBasePath(targetRole);
   const suffix = pathname.slice(currentBase.length);
 

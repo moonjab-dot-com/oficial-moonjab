@@ -10,7 +10,7 @@ interface ProtectedRouteProps {
 }
 
 export const ProtectedRoute = ({ children, requireOnboarding = false }: ProtectedRouteProps) => {
-  const { user, isAuthenticated, isGuestMode } = useAuthStore();
+  const { user, session, isAuthenticated, isGuestMode } = useAuthStore();
   const location = useLocation();
   const [checking, setChecking] = useState(true);
 
@@ -31,12 +31,24 @@ export const ProtectedRoute = ({ children, requireOnboarding = false }: Protecte
     );
   }
 
-  if (!isAuthenticated && !isGuestMode) {
+  const hasSession = !!session;
+
+  if (!isGuestMode && !hasSession && !isAuthenticated) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
+  if (!isGuestMode && hasSession && !user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
+
   const accessRole = user?.accessRole || (isGuestMode ? 'trial_user' : 'free_user');
-  const isTrialRoute = location.pathname.startsWith('/usuariostest/dashboard');
+  const isTrialRoute =
+    location.pathname.startsWith('/test/dashboard') ||
+    location.pathname.startsWith('/usuariostest/dashboard');
   const shouldBeOnTrialRoute = accessRole === 'trial_user';
 
   if (location.pathname.startsWith('/dashboard') || isTrialRoute) {
