@@ -9,7 +9,7 @@ import { ArrowLeft } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
 import { toast } from 'sonner';
 import { OfficialLogo } from '@/components/OfficialLogo';
-
+import { Separator } from '@/components/ui/separator';
 import { z } from 'zod';
 
 const loginSchema = z.object({
