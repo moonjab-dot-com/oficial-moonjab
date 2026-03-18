@@ -23,10 +23,6 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ email: '', password: '', remember: false });
 
-  const handleGoogleLogin = async () => {
-    try { await useAuthStore.getState().signInWithGoogle(); } 
-    catch { toast.error('Error al conectar con Google'); }
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -95,19 +91,6 @@ const Login = () => {
           </Button>
         </form>
 
-        <div className="my-5">
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-border/50" /></div>
-            <div className="relative flex justify-center text-[10px] uppercase">
-              <span className="bg-background px-3 text-muted-foreground">O continúa con</span>
-            </div>
-          </div>
-          <div className="mt-4">
-            <Button type="button" variant="outline" onClick={handleGoogleLogin} className="w-full h-10 text-xs">
-              <img src="https://www.google.com/favicon.ico" alt="Google" className="mr-1.5 h-4 w-4" /> Continuar con Google
-            </Button>
-          </div>
-        </div>
 
         <p className="text-center text-xs text-muted-foreground">
           ¿No tienes cuenta?{' '}
