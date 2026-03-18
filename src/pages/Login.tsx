@@ -23,10 +23,6 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ email: '', password: '', remember: false });
 
-  const handleGoogleLogin = async () => {
-    try { await useAuthStore.getState().signInWithGoogle(); } 
-    catch { toast.error('Error al conectar con Google'); }
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
