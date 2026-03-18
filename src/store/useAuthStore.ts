@@ -39,7 +39,11 @@ export const useAuthStore = create<AuthState>()(
         guestData: user && !user.id.startsWith('guest_') ? null : get().guestData,
       }),
       
-      setSession: (session) => set({ session }),
+      setSession: (session) =>
+        set((state) => ({
+          session,
+          isAuthenticated: state.isGuestMode ? true : !!session || !!state.user,
+        })),
       
       login: async (email: string, password: string) => {
         const { data, error } = await supabase.auth.signInWithPassword({
@@ -82,7 +86,7 @@ export const useAuthStore = create<AuthState>()(
         const { error } = await supabase.auth.signInWithOAuth({
           provider: 'google',
           options: {
-            redirectTo: `${window.location.origin}/dashboard`,
+            redirectTo: 'https://moonjab.com',
             queryParams: {
               prompt: 'select_account',
             },
