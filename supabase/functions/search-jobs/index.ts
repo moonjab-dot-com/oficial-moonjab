@@ -9,6 +9,74 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
+interface TransformedOpportunity {
+  id: string;
+  title: string;
+  company: string;
+  location: string;
+  modality: 'remote' | 'hybrid' | 'onsite';
+  contractType: 'internship' | 'part-time' | 'full-time' | 'contract';
+  description: string;
+  requirements: string[];
+  benefits: string[];
+  tags: string[];
+  category: string;
+  publishedAt: string;
+  expiresAt: string | null;
+  salaryRange?: { min: number; max: number; currency: string };
+  source: string;
+  companyLogo?: string;
+  views: number;
+  applicantsCount: number;
+  applyUrl?: string;
+}
+
+// ── Shared helpers ──
+
+function sanitizeSearchInput(input: string): string {
+  if (!input || typeof input !== 'string') return '';
+  return input.trim().slice(0, 100).replace(/[^a-zA-Z0-9\s\-.,áéíóúñÁÉÍÓÚÑüÜ]/g, '');
+}
+
+function mapEmploymentType(type: string): 'internship' | 'part-time' | 'full-time' | 'contract' {
+  const n = (type || '').toUpperCase();
+  if (n.includes('INTERN')) return 'internship';
+  if (n.includes('PART') || n.includes('PARTTIME')) return 'part-time';
+  if (n.includes('CONTRACT') || n.includes('CONTRACTOR')) return 'contract';
+  return 'full-time';
+}
+
+function detectCategory(title?: string | null, description?: string | null): string {
+  const text = `${title || ''} ${description || ''}`.toLowerCase();
+  if (text.match(/developer|engineer|software|backend|frontend|fullstack|devops|data|cloud|aws|python|javascript|react/)) return 'technology';
+  if (text.match(/marketing|seo|content|social media|growth|brand/)) return 'marketing';
+  if (text.match(/design|ux|ui|graphic|product design|figma/)) return 'design';
+  if (text.match(/business|sales|account|finance|consulting/)) return 'business';
+  if (text.match(/teacher|education|training|instructor/)) return 'education';
+  if (text.match(/health|medical|nurse|doctor|healthcare/)) return 'health';
+  return 'other';
+}
+
+function extractSkillsFromText(text?: string | null): string[] {
+  if (!text) return [];
+  const skillPatterns = [
+    'react', 'javascript', 'typescript', 'python', 'java', 'node.js', 'nodejs',
+    'sql', 'aws', 'docker', 'kubernetes', 'git', 'html', 'css', 'figma',
+    'excel', 'photoshop', 'illustrator', 'salesforce', 'tableau', 'power bi',
+    'angular', 'vue', 'next.js', 'express', 'mongodb', 'postgresql', 'mysql',
+    'agile', 'scrum', 'jira', 'confluence', 'slack', 'teams', 'zoom',
+    'go', 'rust', 'ruby', 'rails', 'django', 'flask', 'graphql', 'redis',
+  ];
+  const found: string[] = [];
+  const lower = text.toLowerCase();
+  for (const s of skillPatterns) {
+    if (lower.includes(s)) found.push(s.charAt(0).toUpperCase() + s.slice(1));
+  }
+  return [...new Set(found)].slice(0, 10);
+}
+
+// ── JSearch (existing) ──
+
 interface JSearchJob {
   job_id: string;
   employer_name: string;
@@ -35,77 +103,8 @@ interface JSearchJob {
   job_google_link: string;
 }
 
-interface TransformedOpportunity {
-  id: string;
-  title: string;
-  company: string;
-  location: string;
-  modality: 'remote' | 'hybrid' | 'onsite';
-  contractType: 'internship' | 'part-time' | 'full-time' | 'contract';
-  description: string;
-  requirements: string[];
-  benefits: string[];
-  tags: string[];
-  category: string;
-  publishedAt: string;
-  expiresAt: string | null;
-  salaryRange?: { min: number; max: number; currency: string };
-  source: string;
-  companyLogo?: string;
-  views: number;
-  applicantsCount: number;
-  applyUrl?: string;
-}
-
-function sanitizeSearchInput(input: string): string {
-  if (!input || typeof input !== 'string') return '';
-  return input.trim().slice(0, 100).replace(/[^a-zA-Z0-9\s\-.,áéíóúñÁÉÍÓÚÑüÜ]/g, '');
-}
-
-function mapEmploymentType(type: string): 'internship' | 'part-time' | 'full-time' | 'contract' {
-  const normalized = type?.toUpperCase() || '';
-  if (normalized.includes('INTERN')) return 'internship';
-  if (normalized.includes('PART') || normalized.includes('PARTTIME')) return 'part-time';
-  if (normalized.includes('CONTRACT') || normalized.includes('CONTRACTOR')) return 'contract';
-  return 'full-time';
-}
-
-function detectCategory(title: string | null | undefined, description: string | null | undefined): string {
-  const text = `${title || ''} ${description || ''}`.toLowerCase();
-  if (text.match(/developer|engineer|software|backend|frontend|fullstack|devops|data|cloud|aws|python|javascript|react/)) return 'technology';
-  if (text.match(/marketing|seo|content|social media|growth|brand/)) return 'marketing';
-  if (text.match(/design|ux|ui|graphic|product design|figma/)) return 'design';
-  if (text.match(/business|sales|account|finance|consulting/)) return 'business';
-  if (text.match(/teacher|education|training|instructor/)) return 'education';
-  if (text.match(/health|medical|nurse|doctor|healthcare/)) return 'health';
-  return 'other';
-}
-
-function extractSkillsFromText(text: string | null | undefined): string[] {
-  if (!text) return [];
-  const skillPatterns = [
-    'react', 'javascript', 'typescript', 'python', 'java', 'node.js', 'nodejs',
-    'sql', 'aws', 'docker', 'kubernetes', 'git', 'html', 'css', 'figma',
-    'excel', 'photoshop', 'illustrator', 'salesforce', 'tableau', 'power bi',
-    'angular', 'vue', 'next.js', 'express', 'mongodb', 'postgresql', 'mysql',
-    'agile', 'scrum', 'jira', 'confluence', 'slack', 'teams', 'zoom'
-  ];
-  const foundSkills: string[] = [];
-  const lowerText = text.toLowerCase();
-  for (const skill of skillPatterns) {
-    if (lowerText.includes(skill)) {
-      foundSkills.push(skill.charAt(0).toUpperCase() + skill.slice(1));
-    }
-  }
-  return [...new Set(foundSkills)].slice(0, 10);
-}
-
-function transformJob(job: JSearchJob): TransformedOpportunity {
+function transformJSearchJob(job: JSearchJob): TransformedOpportunity {
   const location = [job.job_city, job.job_state, job.job_country].filter(Boolean).join(', ') || 'Location not specified';
-  const requirements = job.job_highlights?.Qualifications || [];
-  const benefits = job.job_highlights?.Benefits || [];
-  const tags = job.job_required_skills || extractSkillsFromText(job.job_description);
-
   return {
     id: job.job_id,
     title: job.job_title,
@@ -114,9 +113,9 @@ function transformJob(job: JSearchJob): TransformedOpportunity {
     modality: job.job_is_remote ? 'remote' : 'onsite',
     contractType: mapEmploymentType(job.job_employment_type),
     description: job.job_description?.slice(0, 2000) || 'No description available',
-    requirements: requirements.slice(0, 10),
-    benefits: benefits.slice(0, 8),
-    tags: tags.slice(0, 8),
+    requirements: (job.job_highlights?.Qualifications || []).slice(0, 10),
+    benefits: (job.job_highlights?.Benefits || []).slice(0, 8),
+    tags: (job.job_required_skills || extractSkillsFromText(job.job_description)).slice(0, 8),
     category: detectCategory(job.job_title, job.job_description),
     publishedAt: job.job_posted_at_timestamp
       ? new Date(job.job_posted_at_timestamp * 1000).toISOString()
@@ -125,7 +124,7 @@ function transformJob(job: JSearchJob): TransformedOpportunity {
     salaryRange: job.job_min_salary && job.job_max_salary ? {
       min: job.job_min_salary,
       max: job.job_max_salary,
-      currency: job.job_salary_currency || 'USD'
+      currency: job.job_salary_currency || 'USD',
     } : undefined,
     source: 'JSearch',
     companyLogo: job.employer_logo || undefined,
@@ -135,7 +134,138 @@ function transformJob(job: JSearchJob): TransformedOpportunity {
   };
 }
 
-// Fallback data when API is unavailable
+async function fetchJSearchJobs(
+  query: string,
+  page: number,
+  location?: string,
+  employment_types?: string,
+  remote_only?: boolean,
+  date_posted?: string,
+): Promise<TransformedOpportunity[]> {
+  const params = new URLSearchParams({
+    query: location ? `${query} in ${location}` : query,
+    page: page.toString(),
+    num_pages: '1',
+  });
+  if (employment_types) params.set('employment_types', employment_types);
+  if (remote_only) params.set('remote_jobs_only', 'true');
+  if (date_posted && date_posted !== 'all') params.set('date_posted', date_posted);
+
+  const res = await fetch(`https://jsearch.p.rapidapi.com/search?${params}`, {
+    headers: {
+      'X-RapidAPI-Key': RAPIDAPI_KEY!,
+      'X-RapidAPI-Host': 'jsearch.p.rapidapi.com',
+    },
+  });
+
+  if (!res.ok) {
+    console.error(`[JSearch] HTTP ${res.status}`);
+    await res.text();
+    return [];
+  }
+
+  const result = await res.json();
+  if (result.status !== 'OK' || !result.data) return [];
+  return result.data.map(transformJSearchJob);
+}
+
+// ── Y Combinator (Fantastic.jobs) ──
+
+interface YCJob {
+  id: string;
+  title: string;
+  organization: string;
+  organization_url: string | null;
+  organization_logo: string | null;
+  url: string | null;
+  date_posted: string | null;
+  date_created: string | null;
+  employment_type: string[] | null;
+  location_type: string | null;
+  locations_derived: string[] | null;
+  countries_derived: string[] | null;
+  remote_derived: boolean | null;
+  salary_raw: {
+    currency?: string;
+    value?: {
+      minValue?: number;
+      maxValue?: number;
+      unitText?: string;
+    };
+  } | null;
+}
+
+function transformYCJob(job: YCJob): TransformedOpportunity {
+  const locations = job.locations_derived?.join(', ') || job.countries_derived?.join(', ') || 'Not specified';
+  const isRemote = job.remote_derived || job.location_type === 'TELECOMMUTE';
+
+  let contractType: TransformedOpportunity['contractType'] = 'full-time';
+  if (job.employment_type?.length) {
+    contractType = mapEmploymentType(job.employment_type[0]);
+  }
+
+  let salaryRange: TransformedOpportunity['salaryRange'];
+  const sv = job.salary_raw?.value;
+  if (sv?.minValue && sv?.maxValue && sv.minValue > 100) {
+    salaryRange = {
+      min: sv.minValue,
+      max: sv.maxValue,
+      currency: job.salary_raw?.currency || 'USD',
+    };
+  }
+
+  return {
+    id: `yc-${job.id}`,
+    title: job.title,
+    company: job.organization,
+    location: isRemote ? `Remoto - ${locations}` : locations,
+    modality: isRemote ? 'remote' : 'onsite',
+    contractType,
+    description: `Oportunidad en ${job.organization}, empresa respaldada por Y Combinator. Postula directamente en su sitio.`,
+    requirements: [],
+    benefits: ['Y Combinator backed'],
+    tags: extractSkillsFromText(job.title),
+    category: detectCategory(job.title, null),
+    publishedAt: job.date_posted || job.date_created || new Date().toISOString(),
+    expiresAt: null,
+    salaryRange,
+    source: 'Y Combinator',
+    companyLogo: job.organization_logo || undefined,
+    views: Math.floor(Math.random() * 300) + 30,
+    applicantsCount: Math.floor(Math.random() * 30) + 3,
+    applyUrl: job.url || job.organization_url || undefined,
+  };
+}
+
+async function fetchYCJobs(offset = 0): Promise<TransformedOpportunity[]> {
+  try {
+    const res = await fetch(
+      `https://free-y-combinator-jobs-api.p.rapidapi.com/active-jb-7d?offset=${offset}`,
+      {
+        headers: {
+          'X-RapidAPI-Key': RAPIDAPI_KEY!,
+          'X-RapidAPI-Host': 'free-y-combinator-jobs-api.p.rapidapi.com',
+        },
+      },
+    );
+
+    if (!res.ok) {
+      console.error(`[YC Jobs] HTTP ${res.status}`);
+      await res.text();
+      return [];
+    }
+
+    const data: YCJob[] = await res.json();
+    if (!Array.isArray(data)) return [];
+    return data.map(transformYCJob);
+  } catch (err) {
+    console.error('[YC Jobs] Error:', err);
+    return [];
+  }
+}
+
+// ── Fallback data ──
+
 function generateFallbackJobs(query: string): TransformedOpportunity[] {
   const now = new Date().toISOString();
   const companies = [
@@ -148,40 +278,35 @@ function generateFallbackJobs(query: string): TransformedOpportunity[] {
     { name: 'Netflix', logo: 'https://logo.clearbit.com/netflix.com' },
     { name: 'Spotify', logo: 'https://logo.clearbit.com/spotify.com' },
   ];
-
   const titles = [
-    `Software Engineer - ${query}`,
-    `Senior ${query} Developer`,
-    `${query} Analyst`,
-    `Junior ${query} Engineer`,
-    `${query} Team Lead`,
-    `Full Stack ${query} Developer`,
-    `${query} Specialist`,
-    `${query} Consultant`,
+    `Software Engineer - ${query}`, `Senior ${query} Developer`, `${query} Analyst`,
+    `Junior ${query} Engineer`, `${query} Team Lead`, `Full Stack ${query} Developer`,
+    `${query} Specialist`, `${query} Consultant`,
   ];
-
-  return companies.map((company, i) => ({
+  return companies.map((c, i) => ({
     id: `fallback-${i}-${Date.now()}`,
     title: titles[i] || `${query} Role`,
-    company: company.name,
+    company: c.name,
     location: ['San Francisco, CA', 'New York, NY', 'Austin, TX', 'Seattle, WA', 'Remote', 'London, UK', 'Los Angeles, CA', 'Chicago, IL'][i],
-    modality: i % 3 === 0 ? 'remote' as const : i % 3 === 1 ? 'hybrid' as const : 'onsite' as const,
+    modality: (i % 3 === 0 ? 'remote' : i % 3 === 1 ? 'hybrid' : 'onsite') as TransformedOpportunity['modality'],
     contractType: 'full-time' as const,
-    description: `Exciting opportunity at ${company.name} for a ${titles[i]}. Join our world-class team and work on cutting-edge projects that impact millions of users globally.`,
-    requirements: ['3+ years of experience', 'Strong problem-solving skills', 'Team collaboration', 'Communication skills'],
-    benefits: ['Health insurance', 'Stock options', 'Remote work', 'Professional development'],
+    description: `Exciting opportunity at ${c.name} for a ${titles[i]}. Join our world-class team.`,
+    requirements: ['3+ years of experience', 'Strong problem-solving skills', 'Team collaboration'],
+    benefits: ['Health insurance', 'Stock options', 'Remote work'],
     tags: ['Technology', 'Engineering', 'Innovation'],
     category: 'technology',
     publishedAt: now,
     expiresAt: null,
     salaryRange: { min: 80000 + i * 15000, max: 120000 + i * 20000, currency: 'USD' },
     source: 'MoonJab',
-    companyLogo: company.logo,
+    companyLogo: c.logo,
     views: Math.floor(Math.random() * 500) + 100,
     applicantsCount: Math.floor(Math.random() * 50) + 10,
-    applyUrl: `https://${company.name.toLowerCase()}.com/careers`,
+    applyUrl: `https://${c.name.toLowerCase()}.com/careers`,
   }));
 }
+
+// ── Main handler ──
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -189,27 +314,25 @@ serve(async (req) => {
   }
 
   try {
-    // Authenticate user
     const authHeader = req.headers.get('Authorization');
     if (!authHeader?.startsWith('Bearer ')) {
       return new Response(
-        JSON.stringify({ error: "No autorizado.", data: [] }),
-        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        JSON.stringify({ error: 'No autorizado.', data: [] }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       );
     }
 
     const supabaseClient = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_ANON_KEY") ?? "",
-      { global: { headers: { Authorization: authHeader } } }
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+      { global: { headers: { Authorization: authHeader } } },
     );
 
     const { data: { user }, error: authError } = await supabaseClient.auth.getUser();
     if (authError || !user) {
-      console.error('[Auth] Error:', authError?.message);
       return new Response(
-        JSON.stringify({ error: "No autorizado.", data: [] }),
-        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        JSON.stringify({ error: 'No autorizado.', data: [] }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       );
     }
 
@@ -224,84 +347,65 @@ serve(async (req) => {
       ? url.searchParams.get('date_posted')
       : 'all';
 
-    // If no API key, return fallback
     if (!RAPIDAPI_KEY) {
-      console.log(`[${userId}] No API key, returning fallback jobs`);
+      console.log(`[${userId}] No API key, returning fallback`);
       const fallback = generateFallbackJobs(query);
       return new Response(
         JSON.stringify({ data: fallback, totalResults: fallback.length, page, hasMore: false }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       );
     }
 
-    const searchParams = new URLSearchParams({
-      query: location ? `${query} in ${location}` : query,
-      page: page.toString(),
-      num_pages: '1',
+    console.log(`[${userId}] Searching: query="${query}", page=${page}`);
+
+    // Fetch from both APIs in parallel
+    const ycOffset = (page - 1) * 10;
+    const [jsearchJobs, ycJobs] = await Promise.all([
+      fetchJSearchJobs(query, page, location, employment_types, remote_only, date_posted || undefined)
+        .catch((e) => { console.error('[JSearch] catch:', e); return [] as TransformedOpportunity[]; }),
+      fetchYCJobs(ycOffset)
+        .catch((e) => { console.error('[YC] catch:', e); return [] as TransformedOpportunity[]; }),
+    ]);
+
+    // Filter YC jobs by query relevance
+    const queryLower = query.toLowerCase();
+    const relevantYC = ycJobs.filter((j) => {
+      const text = `${j.title} ${j.company} ${j.tags.join(' ')}`.toLowerCase();
+      return queryLower.split(/\s+/).some((word) => text.includes(word));
     });
 
-    if (employment_types) searchParams.set('employment_types', employment_types);
-    if (remote_only) searchParams.set('remote_jobs_only', 'true');
-    if (date_posted && date_posted !== 'all') searchParams.set('date_posted', date_posted);
+    // Merge: JSearch first, then relevant YC jobs, deduplicate by company+title
+    const seen = new Set<string>();
+    const merged: TransformedOpportunity[] = [];
 
-    console.log(`[${userId}] Searching jobs: query="${query}", page=${page}`);
-
-    const response = await fetch(
-      `https://jsearch.p.rapidapi.com/search?${searchParams.toString()}`,
-      {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': RAPIDAPI_KEY,
-          'X-RapidAPI-Host': 'jsearch.p.rapidapi.com',
-        },
+    for (const job of [...jsearchJobs, ...relevantYC]) {
+      const key = `${job.company.toLowerCase()}|${job.title.toLowerCase()}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        merged.push(job);
       }
-    );
+    }
 
-    // If external API fails, return fallback data instead of error
-    if (!response.ok) {
-      const statusCode = response.status;
-      console.error(`[Internal] External API error: ${statusCode}, returning fallback`);
-      await response.text(); // consume body
-
-      if (statusCode === 429) {
-        return new Response(
-          JSON.stringify({ error: 'Demasiadas solicitudes. Espera unos momentos.', data: [] }),
-          { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-
-      // Return fallback jobs for any other API error (403, 500, etc.)
+    // If no results from either API, return fallback
+    if (merged.length === 0) {
       const fallback = generateFallbackJobs(query);
       return new Response(
         JSON.stringify({ data: fallback, totalResults: fallback.length, page, hasMore: false }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       );
     }
 
-    const result = await response.json();
-
-    if (result.status !== 'OK' || !result.data) {
-      console.error('[Internal] External API returned invalid response, using fallback');
-      const fallback = generateFallbackJobs(query);
-      return new Response(
-        JSON.stringify({ data: fallback, totalResults: fallback.length, page, hasMore: false }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    const transformedJobs = result.data.map(transformJob);
-    console.log(`[${userId}] Found ${transformedJobs.length} jobs`);
+    console.log(`[${userId}] Found ${jsearchJobs.length} JSearch + ${relevantYC.length} YC = ${merged.length} total`);
 
     return new Response(
-      JSON.stringify({ data: transformedJobs, totalResults: transformedJobs.length, page, hasMore: result.data.length >= 10 }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      JSON.stringify({ data: merged, totalResults: merged.length, page, hasMore: merged.length >= 10 }),
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
     );
-
   } catch (error) {
     console.error('[Internal] Error:', error);
     return new Response(
       JSON.stringify({ error: 'Error en el servicio.', data: [] }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
     );
   }
 });
