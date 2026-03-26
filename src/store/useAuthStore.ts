@@ -56,13 +56,11 @@ export const useAuthStore = create<AuthState>()(
       },
       
       register: async (name: string, email: string, password: string) => {
-        const redirectUrl = `${window.location.origin}/auth`;
-        
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
-            emailRedirectTo: redirectUrl,
+            emailRedirectTo: 'https://moonjab.com/dashboard',
             data: {
               nombre: name,
               name: name,
@@ -76,7 +74,7 @@ export const useAuthStore = create<AuthState>()(
       
       resetPassword: async (email: string) => {
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
-          redirectTo: `${window.location.origin}/reset-password`,
+          redirectTo: 'https://moonjab.com/reset-password',
         });
         
         if (error) throw error;
@@ -86,7 +84,7 @@ export const useAuthStore = create<AuthState>()(
         const { error } = await supabase.auth.signInWithOAuth({
           provider: 'google',
           options: {
-            redirectTo: 'https://moonjab.com',
+            redirectTo: 'https://moonjab.com/dashboard',
             queryParams: {
               prompt: 'select_account',
             },
