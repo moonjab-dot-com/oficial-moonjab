@@ -18,6 +18,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { UpgradeBanner } from '@/components/UpgradeBanner';
 import { UpgradeModal } from '@/components/UpgradeModal';
+import { SEOHead } from '@/components/SEOHead';
 
 export default function Opportunities() {
   const { t } = useTranslation();
@@ -101,7 +102,8 @@ export default function Opportunities() {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div
+      <SEOHead title="Oportunidades Laborales" description="Explora ofertas de empleo que se alinean con tu perfil. Oportunidades en tecnología, marketing, diseño y más." path="/opportunities" /> className="min-h-screen bg-background">
       <div className="border-b bg-card shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">

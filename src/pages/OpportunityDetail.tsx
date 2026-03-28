@@ -35,6 +35,7 @@ import { es } from 'date-fns/locale';
 import { toast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
 import Confetti from 'react-confetti';
+import { SEOHead } from '@/components/SEOHead';
 
 export default function OpportunityDetail() {
   const { id } = useParams<{ id: string }>();
@@ -167,6 +168,7 @@ export default function OpportunityDetail() {
 
   return (
     <>
+      <SEOHead title="Detalle de Oportunidad" description="Información detallada sobre esta oportunidad laboral." path="/opportunities/detail" noindex />
       {showConfetti && <Confetti recycle={false} numberOfPieces={500} />}
 
       <div className="min-h-screen bg-background">

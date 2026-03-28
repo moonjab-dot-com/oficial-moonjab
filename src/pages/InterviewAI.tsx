@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Mic } from "lucide-react";
+import { SEOHead } from '@/components/SEOHead';
 
 // ElevenLabs ConvAI widget declaration
 declare global {
@@ -23,7 +24,8 @@ export default function InterviewAI() {
   const navigate = useNavigate();
 
   return (
-    <div className="container max-w-4xl py-8">
+    <div
+      <SEOHead title="Entrevista IA" description="Sesión de entrevista con inteligencia artificial en MoonJab." path="/interview-ai" noindex /> className="container max-w-4xl py-8">
       {/* Header */}
       <div className="flex items-center gap-4 mb-6">
         <Button 

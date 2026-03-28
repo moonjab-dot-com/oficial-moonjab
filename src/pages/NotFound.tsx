@@ -2,6 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, SearchX } from "lucide-react";
+import { SEOHead } from '@/components/SEOHead';
 
 const NotFound = () => {
   const location = useLocation();
@@ -11,7 +12,8 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background p-6">
+    <div
+      <SEOHead title="Página No Encontrada" description="La página que buscas no existe o fue movida." path="/404" noindex /> className="flex min-h-screen items-center justify-center bg-background p-6">
       <div className="text-center max-w-xs space-y-5">
         <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto">
           <SearchX className="h-6 w-6 text-primary" />

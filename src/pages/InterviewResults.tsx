@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useInterviewStore } from "@/store/useInterviewStore";
 import { useEffect } from "react";
 import { useTranslation } from 'react-i18next';
+import { SEOHead } from '@/components/SEOHead';
 
 export default function InterviewResults() {
   const { t } = useTranslation();
@@ -40,7 +41,8 @@ export default function InterviewResults() {
   };
 
   return (
-    <div className="container max-w-4xl py-8 space-y-6">
+    <div
+      <SEOHead title="Resultados de Entrevista" description="Revisa tu desempeño y feedback detallado de tu entrevista con IA." path="/interview-results" noindex /> className="container max-w-4xl py-8 space-y-6">
       {/* Success header */}
       <Card className="p-8 text-center space-y-4 rounded-3xl shadow-clovely-xl border-2 border-green-200 bg-gradient-to-br from-green-50/50 to-emerald-50/30">
         <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-100 shadow-clovely-md mb-2">

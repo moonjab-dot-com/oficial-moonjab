@@ -10,6 +10,7 @@ import { toast } from 'sonner';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { supabase } from '@/integrations/supabase/client';
 import { z } from 'zod';
+import { SEOHead } from '@/components/SEOHead';
 
 const emailSchema = z.object({
   email: z.string().email('Email inválido'),
@@ -41,7 +42,8 @@ const ForgotPassword = () => {
 
   if (emailSent) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-6 bg-background">
+      <div
+      <SEOHead title="Recuperar Contraseña" description="Recupera el acceso a tu cuenta MoonJab. Te enviaremos un enlace para restablecer tu contraseña." path="/forgot-password" noindex /> className="min-h-screen flex items-center justify-center p-6 bg-background">
         <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-sm">
           <Card className="p-8 border-primary/20">
             <div className="text-center space-y-5">

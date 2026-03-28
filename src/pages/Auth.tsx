@@ -13,6 +13,7 @@ import { Loader2, Sparkles } from 'lucide-react';
 import { z } from 'zod';
 import { getDashboardBasePath } from '@/lib/authRouting';
 import type { AccessRole } from '@/types';
+import { SEOHead } from '@/components/SEOHead';
 
 const signupSchema = z.object({
   nombre: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
@@ -103,7 +104,8 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div
+      <SEOHead title="Autenticación" description="Inicia sesión o regístrate en MoonJab." path="/auth" noindex /> className="min-h-screen bg-background flex items-center justify-center p-4">
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="w-full max-w-sm">
         <div className="text-center mb-8">
           <OfficialLogo size="md" className="mx-auto mb-6" />

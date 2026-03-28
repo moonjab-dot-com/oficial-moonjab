@@ -6,6 +6,7 @@ import { Users, Target, TrendingUp, Activity } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import {
+import { SEOHead } from '@/components/SEOHead';
   BarChart, 
   Bar, 
   XAxis, 
@@ -145,7 +146,8 @@ const AdminDashboard = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div
+      <SEOHead title="Panel de Administración" description="Panel de administración de MoonJab." path="/admin" noindex /> className="flex items-center justify-center h-screen">
         <div className="text-center space-y-4">
           <Activity className="h-12 w-12 animate-spin text-primary mx-auto" />
           <p className="text-muted-foreground">Cargando analytics...</p>

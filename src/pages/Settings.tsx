@@ -20,6 +20,7 @@ import { LanguageSection } from '@/components/settings/LanguageSection';
 import { AccountSection } from '@/components/settings/AccountSection';
 import { RoleSection } from '@/components/settings/RoleSection';
 import { cn } from '@/lib/utils';
+import { SEOHead } from '@/components/SEOHead';
 
 type SettingSection = 
   | 'profile' | 'role' | 'security' | 'notifications' 
@@ -48,7 +49,8 @@ export default function Settings() {
       case 'profile': return <ProfileSection />;
       case 'role': return <RoleSection />;
       case 'security': return <SecuritySection />;
-      case 'notifications': return (<><NotificationsSettings /><NotificationsSection /></>);
+      case 'notifications': return (<>
+      <SEOHead title="Configuración" description="Personaliza tu experiencia en MoonJab. Ajusta tu perfil, notificaciones y preferencias." path="/settings" noindex /><NotificationsSettings /><NotificationsSection /></>);
       case 'appearance': return <AppearanceSection />;
       case 'language': return <LanguageSection />;
       case 'subscription': return <SubscriptionSection />;

@@ -14,6 +14,7 @@ import {
 import { FileText, Plus, MoreVertical, Download, Copy, Trash2 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
+import { SEOHead } from '@/components/SEOHead';
 
 export default function CVList() {
   const navigate = useNavigate();
@@ -46,7 +47,8 @@ export default function CVList() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+    <div
+      <SEOHead title="Mis CVs" description="Gestiona todos tus currículums en un solo lugar." path="/cv" noindex /> className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
       <motion.div 
         initial={{ opacity: 0, y: 8 }} 
         animate={{ opacity: 1, y: 0 }}

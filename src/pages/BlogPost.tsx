@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Twitter, Linkedin, User } from 'lucide-react';
 import { blogPosts } from './Blog';
+import { SEOHead } from '@/components/SEOHead';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -18,7 +19,8 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div
+      <SEOHead title="Blog" description="Artículo del blog de MoonJab sobre empleabilidad, CV y desarrollo profesional." path="/blog" /> className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
           <Link to="/blog">

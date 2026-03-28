@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Link } from 'react-router-dom';
 import { Search, MessageCircle, Mail, FileText, Target, Sparkles, HelpCircle, ArrowRight, BookOpen, Video, Users } from 'lucide-react';
 import { ElevenLabsWidget } from '@/components/help/ElevenLabsWidget';
+import { SEOHead } from '@/components/SEOHead';
 
 const Help = () => {
   const { t } = useTranslation();
@@ -38,7 +39,8 @@ const Help = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div
+      <SEOHead title="Centro de Ayuda" description="¿Necesitas ayuda con MoonJab? Encuentra respuestas a preguntas frecuentes y contacta a nuestro equipo de soporte." path="/help" /> className="min-h-screen bg-background">
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
           <OfficialLogo size="lg" to="/" />
