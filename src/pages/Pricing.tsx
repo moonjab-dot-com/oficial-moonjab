@@ -86,6 +86,7 @@ const Pricing = () => {
         </div>
       </nav>
 
+      <SEOHead title="Planes y Precios" description="Compara los planes de MoonJab. Modo invitado gratuito o Plan Pro a $15/mes con CV ilimitados, entrevistas con IA y oportunidades exclusivas." path="/pricing" />
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-4xl text-center">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>

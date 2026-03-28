@@ -27,6 +27,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead title="Sobre Nosotros" description="Conoce al equipo detrás de MoonJab. Nuestra misión es democratizar la empleabilidad en LATAM con inteligencia artificial." path="/about" />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
           <OfficialLogo size="lg" to="/" />
