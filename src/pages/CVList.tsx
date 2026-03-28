@@ -47,9 +47,8 @@ export default function CVList() {
   };
 
   return (
-    <div
-      <SEOHead title="Mis CVs" description="Gestiona todos tus currículums en un solo lugar." path="/cv" noindex /> className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-        <SEOHead title="Mis CVs" description="Gestiona todos tus currículums en un solo lugar." path="/cv" noindex />
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <SEOHead title="Mis CVs" description="Gestiona todos tus currículums en un solo lugar." path="/cv" noindex />
       <motion.div 
         initial={{ opacity: 0, y: 8 }} 
         animate={{ opacity: 1, y: 0 }}

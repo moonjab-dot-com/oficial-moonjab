@@ -205,9 +205,8 @@ export default function CVBuilder() {
 
   if (!currentCV) {
     return (
-      <div
-      <SEOHead title="Editor de CV" description="Crea y edita tu CV profesional con el editor inteligente de MoonJab." path="/cv/edit" noindex /> className="flex items-center justify-center h-screen">
-        <SEOHead title="Editor de CV" description="Crea y edita tu CV profesional con el editor inteligente de MoonJab." path="/cv/edit" noindex />
+      <div className="flex items-center justify-center h-screen">
+      <SEOHead title="Editor de CV" description="Crea y edita tu CV profesional con el editor inteligente de MoonJab." path="/cv/edit" noindex />
         <div className="animate-pulse text-muted-foreground">Cargando CV...</div>
       </div>
     );

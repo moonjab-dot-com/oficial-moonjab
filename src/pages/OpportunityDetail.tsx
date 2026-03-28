@@ -172,7 +172,6 @@ export default function OpportunityDetail() {
       {showConfetti && <Confetti recycle={false} numberOfPieces={500} />}
 
       <div className="min-h-screen bg-background">
-        <SEOHead title="Detalle de Oportunidad" description="Información detallada sobre esta oportunidad laboral." path="/opportunities/detail" noindex />
         {/* Header */}
         <div className="border-b bg-card">
           <div className="container mx-auto px-4 py-6">

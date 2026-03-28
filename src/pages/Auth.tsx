@@ -104,9 +104,8 @@ export default function Auth() {
   };
 
   return (
-    <div
-      <SEOHead title="Autenticación" description="Inicia sesión o regístrate en MoonJab." path="/auth" noindex /> className="min-h-screen bg-background flex items-center justify-center p-4">
-        <SEOHead title="Autenticación" description="Inicia sesión o regístrate en MoonJab." path="/auth" noindex />
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <SEOHead title="Autenticación" description="Inicia sesión o regístrate en MoonJab." path="/auth" noindex />
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="w-full max-w-sm">
         <div className="text-center mb-8">
           <OfficialLogo size="md" className="mx-auto mb-6" />

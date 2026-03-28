@@ -24,9 +24,8 @@ export default function InterviewAI() {
   const navigate = useNavigate();
 
   return (
-    <div
-      <SEOHead title="Entrevista IA" description="Sesión de entrevista con inteligencia artificial en MoonJab." path="/interview-ai" noindex /> className="container max-w-4xl py-8">
-        <SEOHead title="Entrevista IA" description="Sesión de entrevista con inteligencia artificial." path="/interview-ai" noindex />
+    <div className="container max-w-4xl py-8">
+      <SEOHead title="Entrevista IA" description="Sesión de entrevista con inteligencia artificial en MoonJab." path="/interview-ai" noindex />
       {/* Header */}
       <div className="flex items-center gap-4 mb-6">
         <Button 

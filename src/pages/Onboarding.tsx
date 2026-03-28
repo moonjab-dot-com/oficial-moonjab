@@ -89,9 +89,8 @@ const Onboarding = () => {
   ];
 
   return (
-    <div
-      <SEOHead title="Bienvenida" description="Configura tu perfil profesional en MoonJab para personalizar tu experiencia." path="/onboarding" noindex /> className="min-h-screen bg-background flex flex-col">
-        <SEOHead title="Bienvenida" description="Configura tu perfil profesional en MoonJab." path="/onboarding" noindex />
+    <div className="min-h-screen bg-background flex flex-col">
+      <SEOHead title="Bienvenida" description="Configura tu perfil profesional en MoonJab para personalizar tu experiencia." path="/onboarding" noindex />
       <div className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-3xl">
           <AnimatePresence mode="wait">

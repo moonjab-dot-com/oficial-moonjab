@@ -63,7 +63,6 @@ export default function Settings() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-      <SEOHead title="Configuración" description="Personaliza tu experiencia en MoonJab." path="/settings" noindex />
       <div className="mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-1">{t('settings.title')}</h1>
         <p className="text-sm text-muted-foreground">{t('settings.subtitle')}</p>

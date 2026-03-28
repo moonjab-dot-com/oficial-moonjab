@@ -214,9 +214,8 @@ export default function InterviewSetup() {
   };
 
   return (
-    <div
-      <SEOHead title="Configurar Entrevista" description="Personaliza tu sesión de entrevista con IA. Elige rol, industria y dificultad." path="/interview-setup" noindex /> className="container max-w-2xl py-8">
-        <SEOHead title="Configurar Entrevista" description="Personaliza tu sesión de entrevista con IA." path="/interview-setup" noindex />
+    <div className="container max-w-2xl py-8">
+      <SEOHead title="Configurar Entrevista" description="Personaliza tu sesión de entrevista con IA. Elige rol, industria y dificultad." path="/interview-setup" noindex />
       <Card className="p-6 sm:p-8 space-y-6 rounded-2xl shadow-clovely-lg border-2">
         <div className="space-y-2 text-center">
           <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">

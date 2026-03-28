@@ -211,7 +211,6 @@ Para asuntos urgentes relacionados con seguridad o abuso, contacta: moonjab.com@
   }];
   return <div className="min-h-screen bg-background">
     <SEOHead title="Términos y Condiciones" description="Lee los términos de uso de MoonJab. Información sobre tu cuenta y derechos como usuario." path="/terms" />
-      <SEOHead title="Términos y Condiciones" description="Lee los términos de uso de MoonJab. Información sobre tu cuenta, suscripción y derechos como usuario." path="/terms" />
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">

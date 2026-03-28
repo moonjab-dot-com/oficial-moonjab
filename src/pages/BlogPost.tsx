@@ -19,9 +19,8 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div
-      <SEOHead title="Blog" description="Artículo del blog de MoonJab sobre empleabilidad, CV y desarrollo profesional." path="/blog" /> className="min-h-screen bg-background flex items-center justify-center">
-        <SEOHead title="Blog" description="Artículo del blog de MoonJab sobre empleabilidad y desarrollo profesional." path="/blog" />
+      <div className="min-h-screen bg-background flex items-center justify-center">
+      <SEOHead title="Blog" description="Artículo del blog de MoonJab sobre empleabilidad, CV y desarrollo profesional." path="/blog" />
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
           <Link to="/blog">

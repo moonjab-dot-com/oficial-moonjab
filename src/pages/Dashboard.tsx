@@ -132,9 +132,8 @@ const Dashboard = () => {
 
   if (identityLoading && !isGuestMode) {
     return (
-      <div
-      <SEOHead title="Dashboard" description="Tu panel de control MoonJab. Gestiona tu CV, entrevistas y oportunidades laborales." path="/dashboard" noindex /> className="min-h-screen bg-background">
-        <SEOHead title="Dashboard" description="Tu panel de control MoonJab. Gestiona CV, entrevistas y oportunidades." path="/dashboard" noindex />
+      <div className="min-h-screen bg-background">
+      <SEOHead title="Dashboard" description="Tu panel de control MoonJab. Gestiona tu CV, entrevistas y oportunidades laborales." path="/dashboard" noindex />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 flex items-center gap-3 text-muted-foreground">
           <Loader2 className="h-5 w-5 animate-spin text-primary" />
           <span className="text-sm">Cargando tu dashboard...</span>
