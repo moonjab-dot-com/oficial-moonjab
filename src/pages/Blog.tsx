@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { motion } from 'framer-motion';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -429,6 +430,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead title="Blog de Empleabilidad" description="Consejos prácticos sobre CV, entrevistas, networking y carrera profesional. Recursos gratuitos para impulsar tu búsqueda de empleo." path="/blog" />
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">

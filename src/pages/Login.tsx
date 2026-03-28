@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -46,6 +47,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
+      <SEOHead title="Iniciar Sesión" description="Accede a tu cuenta MoonJab para gestionar tu CV, practicar entrevistas y explorar oportunidades laborales." path="/login" />
       <motion.div 
         initial={{ opacity: 0, y: 10 }} 
         animate={{ opacity: 1, y: 0 }} 
