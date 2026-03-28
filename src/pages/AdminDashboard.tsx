@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
@@ -146,6 +147,7 @@ const AdminDashboard = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen">
+      <SEOHead title="Panel de Administración" description="Panel de administración de MoonJab." path="/admin" noindex />
         <div className="text-center space-y-4">
           <Activity className="h-12 w-12 animate-spin text-primary mx-auto" />
           <p className="text-muted-foreground">Cargando analytics...</p>

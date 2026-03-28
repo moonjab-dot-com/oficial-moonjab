@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -39,6 +40,7 @@ const Help = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead title="Centro de Ayuda" description="¿Necesitas ayuda con MoonJab? Encuentra respuestas a preguntas frecuentes y contacta a nuestro equipo de soporte." path="/help" />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
           <OfficialLogo size="lg" to="/" />

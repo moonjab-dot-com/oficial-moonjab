@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -102,6 +103,7 @@ export default function Opportunities() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead title="Oportunidades Laborales" description="Explora ofertas de empleo que se alinean con tu perfil. Oportunidades en tecnología, marketing, diseño y más." path="/opportunities" />
       <div className="border-b bg-card shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">

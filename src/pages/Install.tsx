@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -58,6 +59,7 @@ export default function Install() {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <SEOHead title="Instalar MoonJab" description="Instala MoonJab como aplicación en tu dispositivo. Accede rápidamente desde tu celular o computadora." path="/install" />
       <Card className="max-w-md w-full p-8 space-y-6 rounded-2xl shadow-clovely-xl border-2">
         <div className="text-center space-y-3">
           <div className="w-20 h-20 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">

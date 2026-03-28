@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -89,6 +90,7 @@ const Onboarding = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEOHead title="Bienvenida" description="Configura tu perfil profesional en MoonJab para personalizar tu experiencia." path="/onboarding" noindex />
       <div className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-3xl">
           <AnimatePresence mode="wait">

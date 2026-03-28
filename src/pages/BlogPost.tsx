@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { motion } from 'framer-motion';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -19,6 +20,7 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
+      <SEOHead title="Blog" description="Artículo del blog de MoonJab sobre empleabilidad, CV y desarrollo profesional." path="/blog" />
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
           <Link to="/blog">

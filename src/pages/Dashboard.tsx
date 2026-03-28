@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useAuthStore } from '@/store/useAuthStore';
@@ -132,6 +133,7 @@ const Dashboard = () => {
   if (identityLoading && !isGuestMode) {
     return (
       <div className="min-h-screen bg-background">
+      <SEOHead title="Dashboard" description="Tu panel de control MoonJab. Gestiona tu CV, entrevistas y oportunidades laborales." path="/dashboard" noindex />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 flex items-center gap-3 text-muted-foreground">
           <Loader2 className="h-5 w-5 animate-spin text-primary" />
           <span className="text-sm">Cargando tu dashboard...</span>
@@ -273,15 +275,13 @@ const Dashboard = () => {
             },
           ].map((action) => (
             <Link key={action.path} to={action.locked ? '#' : action.path} className="group">
-              <div
-                className={`flex items-center gap-3 p-4 rounded-xl border transition-all duration-200 ${
+              <div className={`flex items-center gap-3 p-4 rounded-xl border transition-all duration-200 ${
                   action.locked
                     ? 'border-border/30 bg-muted/20 opacity-60 cursor-not-allowed'
                     : 'border-border/50 hover:border-primary/20 hover:bg-primary/[0.02]'
                 }`}
               >
-                <div
-                  className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors ${
+                <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors ${
                     action.locked ? 'bg-muted' : 'bg-primary/10 group-hover:bg-primary/15'
                   }`}
                 >

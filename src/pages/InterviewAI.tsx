@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -24,6 +25,7 @@ export default function InterviewAI() {
 
   return (
     <div className="container max-w-4xl py-8">
+      <SEOHead title="Entrevista IA" description="Sesión de entrevista con inteligencia artificial en MoonJab." path="/interview-ai" noindex />
       {/* Header */}
       <div className="flex items-center gap-4 mb-6">
         <Button 
