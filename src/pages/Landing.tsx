@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
