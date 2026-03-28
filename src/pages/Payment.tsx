@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -10,7 +11,6 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
 import { Badge } from '@/components/ui/badge';
-import { SEOHead } from '@/components/SEOHead';
 
 const Payment = () => {
   const { t } = useTranslation();
@@ -64,6 +64,7 @@ const Payment = () => {
   return (
     <div
       <SEOHead title="Suscripción Pro" description="Suscríbete al plan Pro de MoonJab y desbloquea CV ilimitados, entrevistas con IA y más." path="/payment" noindex /> className="min-h-screen bg-background">
+        <SEOHead title="Suscripción Pro" description="Suscríbete al plan Pro de MoonJab." path="/payment" noindex />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/40">
         <div className="container mx-auto px-6 h-14 flex items-center justify-between max-w-5xl">
           <OfficialLogo size="md" to="/" />

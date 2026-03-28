@@ -1,9 +1,9 @@
+import { SEOHead } from '@/components/SEOHead';
 import { motion } from 'framer-motion';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Link } from 'react-router-dom';
 import { FileText, CheckCircle, AlertCircle, Scale, Mail } from 'lucide-react';
-import { SEOHead } from '@/components/SEOHead';
 const Terms = () => {
   const keyPoints = ['Debes tener 16+ años para usar MoonJab', 'Eres responsable de mantener tu cuenta segura', 'No garantizamos resultados específicos de empleo', 'Puedes cancelar en cualquier momento'];
   const sections = [{
@@ -210,6 +210,7 @@ Para asuntos urgentes relacionados con seguridad o abuso, contacta: moonjab.com@
       `
   }];
   return <div className="min-h-screen bg-background">
+    <SEOHead title="Términos y Condiciones" description="Lee los términos de uso de MoonJab. Información sobre tu cuenta y derechos como usuario." path="/terms" />
       <SEOHead title="Términos y Condiciones" description="Lee los términos de uso de MoonJab. Información sobre tu cuenta, suscripción y derechos como usuario." path="/terms" />
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">

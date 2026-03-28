@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -10,7 +11,6 @@ import { toast } from 'sonner';
 import { DecoratedLogo } from '@/components/DecoratedLogo';
 import { supabase } from '@/integrations/supabase/client';
 import { z } from 'zod';
-import { SEOHead } from '@/components/SEOHead';
 
 const passwordSchema = z.object({
   password: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres'),
@@ -63,6 +63,7 @@ const ResetPassword = () => {
   return (
     <div
       <SEOHead title="Restablecer Contraseña" description="Establece una nueva contraseña para tu cuenta MoonJab." path="/reset-password" noindex /> className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-background via-background to-primary/5">
+        <SEOHead title="Restablecer Contraseña" description="Establece una nueva contraseña para tu cuenta MoonJab." path="/reset-password" noindex />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mic, TrendingUp, Target, Clock, Bot, Sparkles, Lock, Crown } from "lucide-react";
@@ -8,7 +9,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { useTranslation } from 'react-i18next';
-import { SEOHead } from '@/components/SEOHead';
 
 export default function InterviewLanding() {
   const { t, i18n } = useTranslation();
@@ -46,6 +46,7 @@ export default function InterviewLanding() {
   return (
     <div
       <SEOHead title="Entrevistas con IA" description="Practica entrevistas laborales con inteligencia artificial. Recibe feedback en tiempo real y mejora tus respuestas." path="/interview" /> className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-10">
+        <SEOHead title="Entrevistas con IA" description="Practica entrevistas laborales con inteligencia artificial. Feedback en tiempo real." path="/interview" />
       {/* Hero */}
       <motion.div 
         initial={{ opacity: 0, y: 8 }} 

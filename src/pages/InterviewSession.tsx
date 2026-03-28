@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -10,7 +11,6 @@ import { useToast } from "@/hooks/use-toast";
 import { VideoRecorder } from "@/components/interview/VideoRecorder";
 import { supabase } from "@/integrations/supabase/client";
 import { useTranslation } from 'react-i18next';
-import { SEOHead } from '@/components/SEOHead';
 
 type ResponseMode = 'text' | 'video';
 
@@ -119,6 +119,7 @@ export default function InterviewSession() {
   return (
     <div
       <SEOHead title="Sesión de Entrevista" description="Practica tu entrevista en tiempo real con feedback de IA." path="/interview-session" noindex /> className="container max-w-4xl py-6 sm:py-8 space-y-4 sm:space-y-6">
+        <SEOHead title="Sesión de Entrevista" description="Practica tu entrevista en tiempo real con feedback de IA." path="/interview-session" noindex />
       {/* Progress */}
       <Card className="p-4 sm:p-6 space-y-3 rounded-2xl shadow-clovely-lg border-2 border-primary/10">
         <div className="flex items-center justify-between text-sm">

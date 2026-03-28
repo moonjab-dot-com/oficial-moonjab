@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCVStore } from '@/store/useCVStore';
@@ -25,7 +26,6 @@ import { cn } from '@/lib/utils';
 import { useAI } from '@/hooks/useAI';
 import { useIsMobile } from '@/hooks/use-mobile';
 import html2pdf from 'html2pdf.js';
-import { SEOHead } from '@/components/SEOHead';
 
 export default function CVBuilder() {
   const { id } = useParams<{ id: string }>();
@@ -207,6 +207,7 @@ export default function CVBuilder() {
     return (
       <div
       <SEOHead title="Editor de CV" description="Crea y edita tu CV profesional con el editor inteligente de MoonJab." path="/cv/edit" noindex /> className="flex items-center justify-center h-screen">
+        <SEOHead title="Editor de CV" description="Crea y edita tu CV profesional con el editor inteligente de MoonJab." path="/cv/edit" noindex />
         <div className="animate-pulse text-muted-foreground">Cargando CV...</div>
       </div>
     );

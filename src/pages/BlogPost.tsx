@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { motion } from 'framer-motion';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -6,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Twitter, Linkedin, User } from 'lucide-react';
 import { blogPosts } from './Blog';
-import { SEOHead } from '@/components/SEOHead';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -21,6 +21,7 @@ const BlogPost = () => {
     return (
       <div
       <SEOHead title="Blog" description="Artículo del blog de MoonJab sobre empleabilidad, CV y desarrollo profesional." path="/blog" /> className="min-h-screen bg-background flex items-center justify-center">
+        <SEOHead title="Blog" description="Artículo del blog de MoonJab sobre empleabilidad y desarrollo profesional." path="/blog" />
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
           <Link to="/blog">

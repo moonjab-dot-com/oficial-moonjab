@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,7 +10,6 @@ import { useAuthStore } from '@/store/useAuthStore';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import { AnswerValue, analyzeRIASECResults, RIASECResult } from '@/lib/riasecScoring';
 import { getDashboardBasePath } from '@/lib/authRouting';
-import { SEOHead } from '@/components/SEOHead';
 
 const Onboarding = () => {
   const navigate = useNavigate();
@@ -91,6 +91,7 @@ const Onboarding = () => {
   return (
     <div
       <SEOHead title="Bienvenida" description="Configura tu perfil profesional en MoonJab para personalizar tu experiencia." path="/onboarding" noindex /> className="min-h-screen bg-background flex flex-col">
+        <SEOHead title="Bienvenida" description="Configura tu perfil profesional en MoonJab." path="/onboarding" noindex />
       <div className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-3xl">
           <AnimatePresence mode="wait">

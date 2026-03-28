@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useEffect, useState, useMemo } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
@@ -35,7 +36,6 @@ import { es } from 'date-fns/locale';
 import { toast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
 import Confetti from 'react-confetti';
-import { SEOHead } from '@/components/SEOHead';
 
 export default function OpportunityDetail() {
   const { id } = useParams<{ id: string }>();
@@ -172,6 +172,7 @@ export default function OpportunityDetail() {
       {showConfetti && <Confetti recycle={false} numberOfPieces={500} />}
 
       <div className="min-h-screen bg-background">
+        <SEOHead title="Detalle de Oportunidad" description="Información detallada sobre esta oportunidad laboral." path="/opportunities/detail" noindex />
         {/* Header */}
         <div className="border-b bg-card">
           <div className="container mx-auto px-4 py-6">

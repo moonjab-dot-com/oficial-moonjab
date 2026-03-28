@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
@@ -16,7 +17,6 @@ import { ResponseModeSelector, type ResponseMode } from "@/components/interview/
 import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
 import type { InterviewLevel, CVData } from "@/types";
-import { SEOHead } from '@/components/SEOHead';
 
 // Helper to convert CV data to text for AI context
 const cvToText = (cv: CVData): string => {
@@ -216,6 +216,7 @@ export default function InterviewSetup() {
   return (
     <div
       <SEOHead title="Configurar Entrevista" description="Personaliza tu sesión de entrevista con IA. Elige rol, industria y dificultad." path="/interview-setup" noindex /> className="container max-w-2xl py-8">
+        <SEOHead title="Configurar Entrevista" description="Personaliza tu sesión de entrevista con IA." path="/interview-setup" noindex />
       <Card className="p-6 sm:p-8 space-y-6 rounded-2xl shadow-clovely-lg border-2">
         <div className="space-y-2 text-center">
           <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">

@@ -1,9 +1,9 @@
+import { SEOHead } from '@/components/SEOHead';
 import { motion } from 'framer-motion';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Link } from 'react-router-dom';
 import { Shield, Lock, Eye, Database, Globe, Mail } from 'lucide-react';
-import { SEOHead } from '@/components/SEOHead';
 const Privacy = () => {
   const highlights = [{
     icon: Shield,
@@ -201,6 +201,7 @@ Responderemos a todas las consultas en un máximo de 5 días hábiles.
       `
   }];
   return <div className="min-h-screen bg-background">
+    <SEOHead title="Política de Privacidad" description="Conoce cómo MoonJab protege tus datos. Transparencia y seguridad en cada paso." path="/privacy" />
       <SEOHead title="Política de Privacidad" description="Conoce cómo MoonJab protege tus datos personales y tu privacidad. Transparencia y seguridad en cada paso." path="/privacy" />
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
