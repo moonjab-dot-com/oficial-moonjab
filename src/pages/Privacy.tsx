@@ -200,8 +200,8 @@ Si tienes preguntas sobre esta política o el manejo de tus datos:
 Responderemos a todas las consultas en un máximo de 5 días hábiles.
       `
   }];
-  return <div
-      <SEOHead title="Política de Privacidad" description="Conoce cómo MoonJab protege tus datos personales y tu privacidad. Transparencia y seguridad en cada paso." path="/privacy" /> className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
+      <SEOHead title="Política de Privacidad" description="Conoce cómo MoonJab protege tus datos personales y tu privacidad. Transparencia y seguridad en cada paso." path="/privacy" />
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
