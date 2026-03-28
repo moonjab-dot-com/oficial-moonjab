@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { motion } from 'framer-motion';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
