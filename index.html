@@ -1,97 +1,179 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" dir="ltr">
   <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VVL5VMKSJM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VVL5VMKSJM');
-</script>
-    
+    <!-- Preconnect for performance -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="theme-color" content="#10b981" />
-    <meta name="color-scheme" content="light dark" />
-    <link rel="apple-touch-icon" href="/moonjab-logo.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/moonjab-logo.png" />
-    
-    <!-- Premium Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&family=Poppins:wght@400;500;600;700&family=Lato:wght@300;400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Primary SEO Meta Tags -->
     <title>MoonJab — Plataforma de Empleabilidad con IA | CV, Entrevistas y Oportunidades</title>
-    <meta name="description" content="MoonJab es la plataforma de empleabilidad con IA #1 en LATAM. Crea tu CV optimizado para ATS, practica entrevistas con inteligencia artificial y encuentra oportunidades laborales alineadas a tu perfil profesional.">
+    <meta name="description" content="MoonJab es la plataforma de empleabilidad con IA #1 en LATAM. Crea tu CV optimizado para ATS, practica entrevistas con inteligencia artificial y encuentra oportunidades laborales alineadas a tu perfil profesional." />
     <meta name="author" content="MoonJab" />
-    <meta name="keywords" content="empleo, CV, currículum, entrevistas con IA, oportunidades laborales, empleabilidad, carrera profesional, ATS, inteligencia artificial, búsqueda de empleo, LATAM, MoonJab">
+    <meta name="keywords" content="empleo, CV, currículum, entrevistas con IA, oportunidades laborales, empleabilidad, carrera profesional, ATS, inteligencia artificial, búsqueda de empleo, LATAM, MoonJab" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- Canonical & Language -->
     <link rel="canonical" href="https://moonjab.com/" />
     <link rel="alternate" hreflang="es" href="https://moonjab.com/" />
     <link rel="alternate" hreflang="en" href="https://moonjab.com/" />
     <link rel="alternate" hreflang="x-default" href="https://moonjab.com/" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
+    <!-- PWA & Mobile -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="MoonJab" />
+    <meta name="application-name" content="MoonJab" />
+    <meta name="theme-color" content="#10b981" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#34d399" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/moonjab-logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/moonjab-logo.png" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://moonjab.com/" />
     <meta property="og:site_name" content="MoonJab" />
     <meta property="og:locale" content="es_LA" />
     <meta property="og:locale:alternate" content="en_US" />
-    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/UTzapF8dTWUuvs1ZKjSuRUh6wJR2/social-images/social-1773758809009-IOS_Icon_MoonJab.webp">
+    <meta property="og:title" content="MoonJab — Plataforma de Empleabilidad con IA | CV, Entrevistas y Oportunidades" />
+    <meta property="og:description" content="Crea tu CV optimizado para ATS, practica entrevistas con IA y encuentra oportunidades laborales en LATAM." />
+    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/UTzapF8dTWUuvs1ZKjSuRUh6wJR2/social-images/social-1773758809009-IOS_Icon_MoonJab.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MoonJab - Plataforma de empleabilidad con inteligencia artificial" />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@MoonJab" />
-    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/UTzapF8dTWUuvs1ZKjSuRUh6wJR2/social-images/social-1773758809009-IOS_Icon_MoonJab.webp">
-    
-    
-    
-    
+    <meta name="twitter:creator" content="@MoonJab" />
+    <meta name="twitter:title" content="MoonJab — Plataforma de Empleabilidad con IA | CV, Entrevistas y Oportunidades" />
+    <meta name="twitter:description" content="Crea tu CV optimizado para ATS, practica entrevistas con IA y encuentra oportunidades laborales en LATAM." />
+    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/UTzapF8dTWUuvs1ZKjSuRUh6wJR2/social-images/social-1773758809009-IOS_Icon_MoonJab.webp" />
+    <meta name="twitter:image:alt" content="MoonJab - Plataforma de empleabilidad con inteligencia artificial" />
 
+    <!-- Preconnect critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://jpimnzadoznmmqeanflo.supabase.co" />
+
+    <!-- Fonts (display=swap for CLS) -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVL5VMKSJM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VVL5VMKSJM');
+    </script>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MoonJab",
+      "url": "https://moonjab.com",
+      "logo": "https://moonjab.com/moonjab-logo.png",
+      "description": "Plataforma de empleabilidad con IA. Crea tu CV, practica entrevistas y encuentra oportunidades laborales.",
+      "sameAs": [
+        "https://twitter.com/MoonJab"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hey@moonjab.com",
+        "contactType": "customer support"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: WebApplication -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "MoonJab",
       "url": "https://moonjab.com",
-      "description": "Plataforma de empleabilidad con IA. Crea tu CV, practica entrevistas y encuentra oportunidades laborales.",
+      "description": "Plataforma de empleabilidad con IA para crear CVs optimizados, practicar entrevistas y encontrar oportunidades laborales.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
+      "inLanguage": ["es", "en", "fr", "pt"],
       "offers": [
         {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
-          "description": "Modo invitado gratuito"
+          "description": "Plan gratuito con funciones básicas"
         },
         {
           "@type": "Offer",
           "price": "15",
           "priceCurrency": "USD",
-          "description": "Plan Pro mensual"
+          "description": "Plan Pro mensual con acceso completo"
         }
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "10000"
+        "reviewCount": "10000",
+        "bestRating": "5",
+        "worstRating": "1"
       }
     }
     </script>
-  <meta property="og:title" content="MoonJab — Plataforma de Empleabilidad con IA | CV, Entrevistas y Oportunidades">
-  <meta name="twitter:title" content="MoonJab — Plataforma de Empleabilidad con IA | CV, Entrevistas y Oportunidades">
-  <meta property="og:description" content="Crea tu CV optimizado para ATS, practica entrevistas con IA y encuentra oportunidades laborales en LATAM.">
-  <meta name="twitter:description" content="Crea tu CV optimizado para ATS, practica entrevistas con IA y encuentra oportunidades laborales en LATAM.">
-</head>
+
+    <!-- Structured Data: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MoonJab",
+      "url": "https://moonjab.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://moonjab.com/dashboard/opportunities?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Critical CSS for initial render (prevents FOUC) -->
+    <style>
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+      body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:#f0f9ff;color:#3b4a5a;overflow-x:hidden}
+      #root{min-height:100vh;display:flex;flex-direction:column}
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+      @media(prefers-color-scheme:dark){body{background:#1e293b;color:#cbd5e1}}
+    </style>
+  </head>
 
   <body>
+    <!--
+      SEO: Visible-to-crawlers content block.
+      Search engines and AI crawlers see this while JS loads.
+    -->
+    <noscript>
+      <header style="text-align:center;padding:2rem">
+        <h1>MoonJab — Plataforma de Empleabilidad con IA</h1>
+        <p>Crea tu CV optimizado para ATS, practica entrevistas con inteligencia artificial y encuentra oportunidades laborales alineadas a tu perfil profesional.</p>
+        <nav aria-label="Navegación principal">
+          <a href="/pricing">Precios</a> |
+          <a href="/about">Nosotros</a> |
+          <a href="/blog">Blog</a> |
+          <a href="/login">Iniciar sesión</a> |
+          <a href="/register">Registrarse</a>
+        </nav>
+      </header>
+    </noscript>
+
     <div id="root"></div>
+
     <script type="module" src="/src/main.tsx"></script>
     <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
   </body>
