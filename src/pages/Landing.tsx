@@ -7,7 +7,7 @@ import {
   ArrowRight, Star, Instagram, CheckCircle, Compass, BarChart3,
   FileText, MessageSquare, Target, TrendingUp, Shield,
   Users, ChevronRight, Zap, ArrowUpRight, Layers, Award,
-  GraduationCap, Briefcase, Sparkles, LineChart, Rocket,
+  GraduationCap, Sparkles, LineChart, Rocket,
   Eye, BookOpen, Check, Mic, Menu, X } from
 'lucide-react';
 import { OfficialLogo } from '@/components/OfficialLogo';
