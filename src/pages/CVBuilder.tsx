@@ -99,7 +99,7 @@ export default function CVBuilder() {
     if (isGuestMode || user?.plan !== 'premium') {
       toast({
         title: 'Función Premium',
-        description: 'Suscríbete al plan Pro por $15/mes para analizar tu CV con IA.',
+        description: 'Suscríbete al plan Pro por $5/mes para analizar tu CV con IA.',
         variant: 'destructive',
       });
       return;
@@ -140,7 +140,7 @@ export default function CVBuilder() {
     if (isGuestMode || user?.plan !== 'premium') {
       toast({
         title: 'Función Premium',
-        description: 'Suscríbete al plan Pro por $15/mes para descargar tus CVs en PDF.',
+        description: 'Suscríbete al plan Pro por $5/mes para descargar tus CVs en PDF.',
         variant: 'destructive',
       });
       return;

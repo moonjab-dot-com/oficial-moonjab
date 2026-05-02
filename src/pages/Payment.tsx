@@ -113,7 +113,7 @@ const Payment = () => {
               </div>
 
               <div className="flex items-baseline gap-1 mb-5">
-                <span className="text-4xl font-bold">$15</span>
+                <span className="text-4xl font-bold">$5</span>
                 <span className="text-muted-foreground">/mo</span>
               </div>
 
@@ -138,11 +138,11 @@ const Payment = () => {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">{t('payment.proMonthly')}</span>
-                  <span className="font-medium">$15.00</span>
+                  <span className="font-medium">$5.00</span>
                 </div>
                 <div className="flex justify-between border-t border-border/30 pt-2">
                   <span className="font-medium">{t('payment.totalToday')}</span>
-                  <span className="font-bold text-primary">$15.00</span>
+                  <span className="font-bold text-primary">$5.00</span>
                 </div>
               </div>
             </div>

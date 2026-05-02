@@ -20,14 +20,14 @@ const MOCK_PAYMENT_HISTORY: PaymentHistory[] = [
 {
   id: 'inv_001',
   date: '2025-01-01',
-  amount: '$15.00',
+  amount: '$5.00',
   method: 'Visa ****1234',
   status: 'paid'
 },
 {
   id: 'inv_002',
   date: '2024-12-01',
-  amount: '$15.00',
+  amount: '$5.00',
   method: 'Visa ****1234',
   status: 'paid'
 }];
@@ -143,7 +143,7 @@ export function SubscriptionSection() {
             
               <div className="flex items-center justify-between mb-2">
                 <div>
-                  <p className="text-lg font-bold">$15/mes</p>
+                  <p className="text-lg font-bold">$5/mes</p>
                   <p className="text-xs text-muted-foreground">​</p>
                 </div>
               </div>

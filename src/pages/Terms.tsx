@@ -114,7 +114,7 @@ Cualquier sugerencia o feedback que proporciones puede ser utilizado por nosotro
 MoonJab ofrece dos modalidades: un modo invitado gratuito con funciones limitadas y un plan Pro de pago con acceso completo a todas las herramientas.
 
 **Precio:**
-El plan Pro tiene un costo de $15 USD por mes, facturado mensualmente.
+El plan Pro tiene un costo de $5 USD por mes, facturado mensualmente.
 
 **Procesamiento de pagos:**
 Los pagos se procesan de forma segura a través de Stripe. Aceptamos las principales tarjetas de crédito y débito. MoonJab no almacena datos de tarjetas; toda la información de pago es gestionada directamente por Stripe.
