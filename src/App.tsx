@@ -9,8 +9,6 @@ import { ThemeProvider } from "next-themes";
 import { Suspense, lazy } from "react";
 import { useAuthSync } from "@/hooks/useAuthSync";
 import { useAuthRedirect } from "@/hooks/useAuthRedirect";
-import { useSmartReminders } from "@/hooks/useSmartReminders";
-import { useNotificationTriggers } from "@/hooks/useNotificationTriggers";
 import { SkeletonDashboard } from "@/components/ui/skeleton-loader";
 import Landing from "./pages/Landing";
 import Auth from "./pages/Auth";
@@ -43,8 +41,6 @@ const InterviewSetup = lazy(() => import("./pages/InterviewSetup"));
 const InterviewSession = lazy(() => import("./pages/InterviewSession"));
 const InterviewResults = lazy(() => import("./pages/InterviewResults"));
 const InterviewAI = lazy(() => import("./pages/InterviewAI"));
-const Opportunities = lazy(() => import("./pages/Opportunities"));
-const OpportunityDetail = lazy(() => import("./pages/OpportunityDetail"));
 const Settings = lazy(() => import("./pages/Settings"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 
@@ -53,8 +49,6 @@ const queryClient = new QueryClient();
 function AuthSyncWrapper({ children }: { children: React.ReactNode }) {
   useAuthSync();
   useAuthRedirect();
-  useSmartReminders();
-  useNotificationTriggers();
   return <>{children}</>;
 }
 
@@ -69,8 +63,6 @@ const dashboardChildren = (
     <Route path="interviews/session" element={<InterviewSession />} />
     <Route path="interviews/results" element={<InterviewResults />} />
     <Route path="interviews/ai" element={<InterviewAI />} />
-    <Route path="opportunities" element={<Opportunities />} />
-    <Route path="opportunities/:id" element={<OpportunityDetail />} />
     <Route path="settings" element={<Settings />} />
   </>
 );

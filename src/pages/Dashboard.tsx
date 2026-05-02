@@ -4,27 +4,15 @@ import { Button } from '@/components/ui/button';
 import { useAuthStore } from '@/store/useAuthStore';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useCVStore } from '@/store/useCVStore';
-import { DailyJob } from '@/components/dashboard/DailyJob';
+import { useInterviewStore } from '@/store/useInterviewStore';
 import { ProgressBar } from '@/components/dashboard/ProgressBar';
-import { NotificationsBell } from '@/components/dashboard/NotificationsBell';
 import { RecommendedResources } from '@/components/dashboard/RecommendedResources';
 import { BillingStatusCard } from '@/components/dashboard/BillingStatusCard';
 import { UpgradeBanner } from '@/components/UpgradeBanner';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import {
-  Briefcase,
-  FileText,
-  ArrowRight,
-  Sparkles,
-  RotateCcw,
-  Compass,
-  Mic,
-  ChevronRight,
-  Crown,
-  Lock,
-  Eye,
-  Zap,
-  Loader2,
+  FileText, ArrowRight, Sparkles, RotateCcw, Compass, Mic,
+  ChevronRight, Crown, Lock, Eye, Loader2,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -36,6 +24,7 @@ const Dashboard = () => {
   const { user, isGuestMode } = useAuthStore();
   const { profile } = useProfileStore();
   const { cvs } = useCVStore();
+  const { sessions } = useInterviewStore();
   const [upgradeModalOpen, setUpgradeModalOpen] = useState(false);
   const [identityLoading, setIdentityLoading] = useState(!isGuestMode);
   const [identity, setIdentity] = useState<{ name: string; email: string } | null>(null);
@@ -96,8 +85,8 @@ const Dashboard = () => {
   );
   const userCV = cvs.find((cv) => cv.userId === user?.id);
   const cvCompletionScore = userCV?.score?.overall || 0;
-  const interviewsPracticed = 0;
-  const opportunitiesSaved = 0;
+  const userSessions = sessions.filter((s) => s.userId === user?.id);
+  const interviewsPracticed = userSessions.length;
 
   const userPlan = isGuestMode ? 'trial' : user?.plan || 'free';
   const isTrial = userPlan === 'trial';
@@ -133,7 +122,7 @@ const Dashboard = () => {
   if (identityLoading && !isGuestMode) {
     return (
       <div className="min-h-screen bg-background">
-      <SEOHead title="Dashboard" description="Tu panel de control MoonJab. Gestiona tu CV, entrevistas y oportunidades laborales." path="/dashboard" noindex />
+        <SEOHead title="Dashboard" description="Tu panel de control MoonJab. Gestiona tu CV y entrevistas." path="/dashboard" noindex />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 flex items-center gap-3 text-muted-foreground">
           <Loader2 className="h-5 w-5 animate-spin text-primary" />
           <span className="text-sm">Cargando tu dashboard...</span>
@@ -144,6 +133,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead title="Dashboard" description="Tu panel de control MoonJab. Gestiona tu CV y entrevistas." path="/dashboard" noindex />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10 pt-14 sm:pt-10">
         <motion.div
           initial={{ opacity: 0, y: 6 }}
@@ -170,7 +160,6 @@ const Dashboard = () => {
               </p>
             </div>
           </div>
-          <NotificationsBell />
         </motion.div>
 
         {isTrial && (
@@ -188,7 +177,7 @@ const Dashboard = () => {
                 <div className="flex-1">
                   <p className="text-sm font-semibold text-foreground">Estás en modo de prueba</p>
                   <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-                    Explora la plataforma libremente. Tus datos son temporales y no afectan el sistema real.
+                    Explora la plataforma libremente. Tus datos son temporales.
                   </p>
                   <div className="flex gap-2 mt-2.5">
                     <Link to="/registro">
@@ -231,8 +220,7 @@ const Dashboard = () => {
                     {isTrial ? 'Prueba el diagnóstico de carrera' : 'Descubre tu perfil profesional'}
                   </h2>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Te recomendamos completar este diagnóstico para personalizar oportunidades, rutas de aprendizaje y
-                    recomendaciones de carrera para ti.
+                    Te recomendamos completar este diagnóstico para personalizar tu experiencia.
                   </p>
                   <Link to="/onboarding">
                     <Button size="sm" variant={isTrial ? 'outline' : 'default'} className="h-8 text-xs mt-1 gap-1.5">
@@ -249,29 +237,22 @@ const Dashboard = () => {
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
-          className="grid sm:grid-cols-3 gap-3 mb-8"
+          className="grid sm:grid-cols-2 gap-3 mb-8"
         >
           {[
             {
               icon: FileText,
               label: 'CV Builder',
-              desc: isTrial ? 'Solo plantilla Harvard' : 'Crea tu CV',
+              desc: isTrial ? 'Plantilla Creativo' : isFree ? 'Plantilla Creativo · Pro: todas' : 'Todas las plantillas',
               path: `${dashboardBasePath}/cvs`,
               locked: false,
             },
             {
               icon: Mic,
-              label: 'Entrevistas',
+              label: 'Entrevistas IA',
               desc: isTrial ? 'No disponible en prueba' : 'Practica con IA',
               path: `${dashboardBasePath}/interviews`,
               locked: isTrial,
-            },
-            {
-              icon: Briefcase,
-              label: 'Oportunidades',
-              desc: isTrial ? '5 vacantes de ejemplo' : isFree ? '5 por día' : 'Acceso completo',
-              path: `${dashboardBasePath}/opportunities`,
-              locked: false,
             },
           ].map((action) => (
             <Link key={action.path} to={action.locked ? '#' : action.path} className="group">
@@ -305,40 +286,8 @@ const Dashboard = () => {
           ))}
         </motion.div>
 
-        {isFree && (
-          <motion.div
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.12 }}
-            className="mb-6"
-          >
-            <div className="rounded-xl border border-border/50 bg-muted/20 p-4">
-              <div className="flex items-center gap-3">
-                <Zap className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <div className="flex-1">
-                  <p className="text-xs font-medium">Límites del plan Free</p>
-                  <p className="text-[11px] text-muted-foreground mt-0.5">
-                    5 oportunidades/día · Plantillas limitadas · Sin análisis IA avanzado
-                  </p>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-7 text-xs text-primary"
-                  onClick={() => setUpgradeModalOpen(true)}
-                >
-                  Ver Pro
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
         <div className="grid lg:grid-cols-[1fr_300px] gap-6">
           <div className="space-y-6">
-            <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.15 }}>
-              <DailyJob />
-            </motion.div>
             {hasRole && (
               <motion.div
                 initial={{ opacity: 0, y: 6 }}
@@ -373,7 +322,6 @@ const Dashboard = () => {
               <ProgressBar
                 cvCompleted={cvCompletionScore}
                 interviewsPracticed={interviewsPracticed}
-                opportunitiesSaved={opportunitiesSaved}
               />
             </motion.div>
             {!isGuestMode && (

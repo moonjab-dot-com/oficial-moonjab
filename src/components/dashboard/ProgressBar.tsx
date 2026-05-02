@@ -1,21 +1,18 @@
 import { Card } from '@/components/ui/card';
-import { FileText, Mic, Bookmark } from 'lucide-react';
+import { FileText, Mic } from 'lucide-react';
 
 interface ProgressBarProps {
   cvCompleted: number;
   interviewsPracticed: number;
-  opportunitiesSaved: number;
 }
 
-export function ProgressBar({ 
-  cvCompleted = 0, 
-  interviewsPracticed = 0, 
-  opportunitiesSaved = 0 
+export function ProgressBar({
+  cvCompleted = 0,
+  interviewsPracticed = 0,
 }: ProgressBarProps) {
   const metrics = [
     { icon: FileText, label: 'CV Completado', value: cvCompleted, max: 100 },
     { icon: Mic, label: 'Entrevistas', value: interviewsPracticed, max: 10 },
-    { icon: Bookmark, label: 'Guardadas', value: opportunitiesSaved, max: 20 },
   ];
 
   return (
@@ -25,7 +22,7 @@ export function ProgressBar({
         {metrics.map((metric) => {
           const Icon = metric.icon;
           const percentage = Math.min((metric.value / metric.max) * 100, 100);
-          
+
           return (
             <div key={metric.label} className="space-y-2">
               <div className="flex items-center justify-between">
@@ -38,7 +35,7 @@ export function ProgressBar({
                 </span>
               </div>
               <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-muted">
-                <div 
+                <div
                   className="h-full rounded-full bg-primary transition-all duration-500"
                   style={{ width: `${percentage}%` }}
                 />

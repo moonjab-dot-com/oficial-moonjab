@@ -53,7 +53,7 @@ const Pricing = () => {
     {
       name: t('pricing.proName'),
       icon: Sparkles,
-      price: '$15',
+      price: '$5',
       period: t('pricing.perMonth'),
       description: t('pricing.proDesc'),
       features: proFeatures,

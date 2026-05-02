@@ -21,7 +21,7 @@ export const UpgradeModal = ({ open, onClose, feature }: UpgradeModalProps) => {
             Desbloquea todo el potencial de MoonJab
           </DialogTitle>
         </DialogHeader>
-        
+
         <div className="space-y-6">
           {feature && (
             <div className="rounded-lg bg-primary/10 p-4 border border-primary/20">
@@ -33,7 +33,7 @@ export const UpgradeModal = ({ open, onClose, feature }: UpgradeModalProps) => {
           )}
           {!feature && (
             <div className="text-center space-y-2">
-              <p className="text-lg font-semibold">Accede a todas las herramientas por <span className="text-primary">$15/mes</span></p>
+              <p className="text-lg font-semibold">Accede a todas las herramientas por <span className="text-primary">$5/mes</span></p>
               <p className="text-sm text-muted-foreground">Cancela cuando quieras. Sin permanencia.</p>
             </div>
           )}
@@ -47,11 +47,7 @@ export const UpgradeModal = ({ open, onClose, feature }: UpgradeModalProps) => {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                  <span>1 plantilla de CV</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                  <span>Oportunidades genéricas</span>
+                  <span>Plantilla de CV "Creativo"</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
@@ -59,11 +55,11 @@ export const UpgradeModal = ({ open, onClose, feature }: UpgradeModalProps) => {
                 </li>
                 <li className="flex items-start gap-2">
                   <X className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">Entrevistas con IA</span>
+                  <span className="text-muted-foreground">Plantilla Harvard CV</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <X className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">Oportunidades personalizadas</span>
+                  <span className="text-muted-foreground">Entrevistas ilimitadas con IA</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <X className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
@@ -79,25 +75,21 @@ export const UpgradeModal = ({ open, onClose, feature }: UpgradeModalProps) => {
               <div>
                 <h3 className="font-heading font-bold text-lg mb-1">Pro</h3>
                 <p className="text-3xl font-heading font-bold text-primary">
-                  $15<span className="text-sm text-muted-foreground">/mes</span>
+                  $5<span className="text-sm text-muted-foreground">/mes</span>
                 </p>
               </div>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                  <span className="font-semibold">Todas las plantillas de CV</span>
+                  <span className="font-semibold">Plantilla Harvard CV (exclusiva)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                  <span className="font-semibold">Todas las plantillas premium</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                   <span className="font-semibold">Entrevistas ilimitadas con IA</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                  <span className="font-semibold">Oportunidades personalizadas</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                  <span className="font-semibold">Match score inteligente</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
@@ -114,7 +106,7 @@ export const UpgradeModal = ({ open, onClose, feature }: UpgradeModalProps) => {
               </ul>
               <Link to="/payment">
                 <Button className="w-full font-semibold">
-                  Suscribirse por $15/mes
+                  Suscribirse por $5/mes
                 </Button>
               </Link>
             </div>
