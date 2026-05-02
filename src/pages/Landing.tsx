@@ -93,7 +93,7 @@ const LandingContent = () => {
   ];
 
   const cvTags = t('landing.features.cv.tags', { returnObjects: true }) as string[];
-  const oppTags = t('landing.features.opportunities.tags', { returnObjects: true }) as string[];
+  
   const cvPoints = t('landing.deepDive.cvPoints', { returnObjects: true }) as string[];
   const interviewPoints = t('landing.deepDive.interviewPoints', { returnObjects: true }) as string[];
   const guestFeatures = t('landing.pricing.guestFeatures', { returnObjects: true }) as string[];
