@@ -28,7 +28,6 @@
   },
   "nav": {
     "dashboard": "Dashboard",
-    "opportunities": "Oportunidades",
     "cv": "Mi CV",
     "interviews": "Entrevistas",
     "settings": "Configuración",
@@ -50,41 +49,6 @@
     "viewAll": "Ver todos",
     "apply": "Aplicar",
     "match": "Compatibilidad"
-  },
-  "opportunities": {
-    "title": "Oportunidades",
-    "subtitle": "Trabajos reales de LinkedIn, Indeed, Glassdoor y más",
-    "search": "Buscar por título, empresa...",
-    "searchLocation": "Ciudad, país...",
-    "searchBtn": "Buscar",
-    "filters": "Filtros",
-    "clearFilters": "Limpiar filtros",
-    "noResults": "No se encontraron oportunidades",
-    "noResultsDesc": "Intenta con otros términos de búsqueda o ajusta los filtros",
-    "location": "Ubicación",
-    "salary": "Salario",
-    "type": "Tipo",
-    "experience": "Experiencia",
-    "remote": "Remoto",
-    "fullTime": "Tiempo completo",
-    "partTime": "Medio tiempo",
-    "contract": "Contrato",
-    "internship": "Pasantía",
-    "saved": "Guardadas",
-    "applied": "Aplicadas",
-    "refresh": "Actualizar",
-    "refreshed": "Oportunidades actualizadas",
-    "refreshedDesc": "Se han cargado las últimas ofertas disponibles",
-    "searching": "Buscando...",
-    "resultsCount": "{{count}} oportunidad(es) encontrada(s)",
-    "loadMore": "Cargar más oportunidades",
-    "rateLimited": "Límite de búsquedas alcanzado. Mostrando datos de ejemplo.",
-    "loadError": "No se pudieron cargar trabajos reales. Mostrando datos de ejemplo.",
-    "savedToast": "Oferta guardada",
-    "savedToastDesc": "Puedes verla en tu lista de guardadas",
-    "removedToast": "Oferta eliminada",
-    "removedToastDesc": "Se ha eliminado de tus guardados",
-    "unlimitedFeature": "oportunidades ilimitadas"
   },
   "cv": {
     "title": "Constructor de CV",
@@ -339,7 +303,11 @@
       "cv": {
         "title": "CV inteligente con IA",
         "description": "Crea un currículum optimizado para ATS que resalte tus logros y se adapte a cada industria. Nuestro motor analiza y mejora cada sección automáticamente.",
-        "tags": ["Plantillas profesionales", "Optimización ATS", "Exportar PDF"]
+        "tags": [
+          "Plantillas profesionales",
+          "Optimización ATS",
+          "Exportar PDF"
+        ]
       },
       "diagnostic": {
         "title": "Diagnóstico vocacional",
@@ -348,11 +316,6 @@
       "interview": {
         "title": "Simulador de entrevistas",
         "description": "Practica con un entrevistador IA que adapta preguntas a tu industria y da feedback en tiempo real."
-      },
-      "opportunities": {
-        "title": "Oportunidades que encajan contigo",
-        "description": "Nuestro algoritmo cruza tu perfil con miles de ofertas para mostrarte solo las que realmente coinciden con tus habilidades y objetivos.",
-        "tags": ["Match inteligente", "Filtros avanzados", "Alertas personalizadas"]
       }
     },
     "how": {
@@ -369,11 +332,19 @@
       "cvLabel": "CV Builder",
       "cvTitle": "Tu mejor versión profesional, en minutos",
       "cvDesc": "No más horas luchando con el formato. Nuestro editor inteligente analiza tu experiencia y genera un CV que pasa los filtros ATS y captura la atención de reclutadores.",
-      "cvPoints": ["Sugerencias de mejora con IA", "Adaptación por industria", "Exportación en PDF profesional"],
+      "cvPoints": [
+        "Sugerencias de mejora con IA",
+        "Adaptación por industria",
+        "Exportación en PDF profesional"
+      ],
       "interviewLabel": "Entrevistas IA",
       "interviewTitle": "Practica hasta sentir confianza total",
       "interviewDesc": "Nuestro simulador reproduce escenarios reales de entrevista adaptados a tu rol e industria. Recibe retroalimentación inmediata sobre tus respuestas.",
-      "interviewPoints": ["Preguntas contextuales por rol", "Análisis de respuestas en tiempo real", "Historial de sesiones y progreso"],
+      "interviewPoints": [
+        "Preguntas contextuales por rol",
+        "Análisis de respuestas en tiempo real",
+        "Historial de sesiones y progreso"
+      ],
       "interviewerAI": "Entrevistador IA"
     },
     "testimonials": {
@@ -396,12 +367,24 @@
       "guestMode": "Modo invitado",
       "guestDesc": "Explora las funciones básicas",
       "forever": "Para siempre",
-      "guestFeatures": ["1 plantilla de CV", "Oportunidades genéricas", "Diagnóstico básico", "Funciones limitadas"],
+      "guestFeatures": [
+        "1 plantilla de CV",
+        "Oportunidades genéricas",
+        "Diagnóstico básico",
+        "Funciones limitadas"
+      ],
       "tryFree": "Probar gratis",
       "recommended": "Recomendado",
       "proDesc": "Todo lo que necesitas",
       "billedMonthly": "Facturado mensualmente",
-      "proFeatures": ["Todas las plantillas de CV", "Entrevistas ilimitadas con IA", "Oportunidades personalizadas", "Match score inteligente", "Diagnóstico completo RIASEC", "Exportación PDF ilimitada"],
+      "proFeatures": [
+        "Todas las plantillas de CV",
+        "Entrevistas ilimitadas con IA",
+        "Oportunidades personalizadas",
+        "Match score inteligente",
+        "Diagnóstico completo RIASEC",
+        "Exportación PDF ilimitada"
+      ],
       "startNow": "Comenzar ahora"
     },
     "cta": {
@@ -532,11 +515,25 @@
     "portalError": "Error al abrir el portal",
     "guestMode": "Modo invitado",
     "guestDesc": "Explora las funciones básicas",
-    "guestFeatures": ["1 plantilla de CV", "Oportunidades genéricas", "Diagnóstico básico", "Funciones limitadas"],
+    "guestFeatures": [
+      "1 plantilla de CV",
+      "Oportunidades genéricas",
+      "Diagnóstico básico",
+      "Funciones limitadas"
+    ],
     "tryFree": "Probar gratis",
     "proName": "Pro",
     "proDesc": "Todo lo que necesitas para crecer",
-    "proFeatures": ["Todas las plantillas de CV", "Entrevistas ilimitadas con IA", "Oportunidades personalizadas", "Match score inteligente", "Coach IA personalizado 24/7", "Diagnóstico completo RIASEC", "Exportación PDF ilimitada", "Soporte prioritario"],
+    "proFeatures": [
+      "Todas las plantillas de CV",
+      "Entrevistas ilimitadas con IA",
+      "Oportunidades personalizadas",
+      "Match score inteligente",
+      "Coach IA personalizado 24/7",
+      "Diagnóstico completo RIASEC",
+      "Exportación PDF ilimitada",
+      "Soporte prioritario"
+    ],
     "proSubscribe": "Suscribirse por $5/mes",
     "currentPlan": "Plan actual",
     "yourCurrentPlan": "Tu plan actual",
@@ -581,7 +578,15 @@
     "securePayment": "Pago seguro con Stripe",
     "cancelAnytime": "Cancela cuando quieras",
     "backToPlans": "Volver a planes",
-    "proFeatures": ["Todas las plantillas de CV", "Entrevistas ilimitadas con IA", "Oportunidades personalizadas con match score", "Coach IA personalizado 24/7", "Diagnóstico completo RIASEC", "Exportación PDF ilimitada", "Soporte prioritario"]
+    "proFeatures": [
+      "Todas las plantillas de CV",
+      "Entrevistas ilimitadas con IA",
+      "Oportunidades personalizadas con match score",
+      "Coach IA personalizado 24/7",
+      "Diagnóstico completo RIASEC",
+      "Exportación PDF ilimitada",
+      "Soporte prioritario"
+    ]
   },
   "errors": {
     "generic": "Ha ocurrido un error",

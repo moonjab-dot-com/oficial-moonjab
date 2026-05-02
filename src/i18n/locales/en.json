@@ -28,7 +28,6 @@
   },
   "nav": {
     "dashboard": "Dashboard",
-    "opportunities": "Opportunities",
     "cv": "My CV",
     "interviews": "Interviews",
     "settings": "Settings",
@@ -50,41 +49,6 @@
     "viewAll": "View all",
     "apply": "Apply",
     "match": "Match"
-  },
-  "opportunities": {
-    "title": "Opportunities",
-    "subtitle": "Real jobs from LinkedIn, Indeed, Glassdoor and more",
-    "search": "Search by title, company...",
-    "searchLocation": "City, country...",
-    "searchBtn": "Search",
-    "filters": "Filters",
-    "clearFilters": "Clear filters",
-    "noResults": "No opportunities found",
-    "noResultsDesc": "Try different search terms or adjust the filters",
-    "location": "Location",
-    "salary": "Salary",
-    "type": "Type",
-    "experience": "Experience",
-    "remote": "Remote",
-    "fullTime": "Full time",
-    "partTime": "Part time",
-    "contract": "Contract",
-    "internship": "Internship",
-    "saved": "Saved",
-    "applied": "Applied",
-    "refresh": "Refresh",
-    "refreshed": "Opportunities updated",
-    "refreshedDesc": "Latest available listings have been loaded",
-    "searching": "Searching...",
-    "resultsCount": "{{count}} opportunity(ies) found",
-    "loadMore": "Load more opportunities",
-    "rateLimited": "Search limit reached. Showing sample data.",
-    "loadError": "Could not load real jobs. Showing sample data.",
-    "savedToast": "Job saved",
-    "savedToastDesc": "You can view it in your saved list",
-    "removedToast": "Job removed",
-    "removedToastDesc": "It has been removed from your saved list",
-    "unlimitedFeature": "unlimited opportunities"
   },
   "cv": {
     "title": "CV Builder",
@@ -339,7 +303,11 @@
       "cv": {
         "title": "AI-powered smart CV",
         "description": "Create an ATS-optimized resume that highlights your achievements and adapts to every industry. Our engine analyzes and improves each section automatically.",
-        "tags": ["Professional templates", "ATS optimization", "Export PDF"]
+        "tags": [
+          "Professional templates",
+          "ATS optimization",
+          "Export PDF"
+        ]
       },
       "diagnostic": {
         "title": "Career diagnostic",
@@ -348,11 +316,6 @@
       "interview": {
         "title": "Interview simulator",
         "description": "Practice with an AI interviewer that adapts questions to your industry and provides real-time feedback."
-      },
-      "opportunities": {
-        "title": "Opportunities that fit you",
-        "description": "Our algorithm matches your profile with thousands of listings to show only those that truly match your skills and goals.",
-        "tags": ["Smart matching", "Advanced filters", "Custom alerts"]
       }
     },
     "how": {
@@ -369,11 +332,19 @@
       "cvLabel": "CV Builder",
       "cvTitle": "Your best professional version, in minutes",
       "cvDesc": "No more hours struggling with formatting. Our smart editor analyzes your experience and generates a CV that passes ATS filters and captures recruiters' attention.",
-      "cvPoints": ["AI-powered improvement suggestions", "Industry-specific adaptation", "Professional PDF export"],
+      "cvPoints": [
+        "AI-powered improvement suggestions",
+        "Industry-specific adaptation",
+        "Professional PDF export"
+      ],
       "interviewLabel": "AI Interviews",
       "interviewTitle": "Practice until you feel total confidence",
       "interviewDesc": "Our simulator reproduces real interview scenarios adapted to your role and industry. Receive immediate feedback on your answers.",
-      "interviewPoints": ["Role-specific contextual questions", "Real-time answer analysis", "Session history and progress"],
+      "interviewPoints": [
+        "Role-specific contextual questions",
+        "Real-time answer analysis",
+        "Session history and progress"
+      ],
       "interviewerAI": "AI Interviewer"
     },
     "testimonials": {
@@ -396,12 +367,24 @@
       "guestMode": "Guest mode",
       "guestDesc": "Explore basic features",
       "forever": "Forever",
-      "guestFeatures": ["1 CV template", "Generic opportunities", "Basic diagnostic", "Limited features"],
+      "guestFeatures": [
+        "1 CV template",
+        "Generic opportunities",
+        "Basic diagnostic",
+        "Limited features"
+      ],
       "tryFree": "Try free",
       "recommended": "Recommended",
       "proDesc": "Everything you need",
       "billedMonthly": "Billed monthly",
-      "proFeatures": ["All CV templates", "Unlimited AI interviews", "Personalized opportunities", "Smart match score", "Complete RIASEC diagnostic", "Unlimited PDF export"],
+      "proFeatures": [
+        "All CV templates",
+        "Unlimited AI interviews",
+        "Personalized opportunities",
+        "Smart match score",
+        "Complete RIASEC diagnostic",
+        "Unlimited PDF export"
+      ],
       "startNow": "Get started"
     },
     "cta": {
@@ -532,11 +515,25 @@
     "portalError": "Error opening the portal",
     "guestMode": "Guest mode",
     "guestDesc": "Explore basic features",
-    "guestFeatures": ["1 CV template", "Generic opportunities", "Basic diagnostic", "Limited features"],
+    "guestFeatures": [
+      "1 CV template",
+      "Generic opportunities",
+      "Basic diagnostic",
+      "Limited features"
+    ],
     "tryFree": "Try free",
     "proName": "Pro",
     "proDesc": "Everything you need to grow",
-    "proFeatures": ["All CV templates", "Unlimited AI interviews", "Personalized opportunities", "Smart match score", "Personalized AI Coach 24/7", "Complete RIASEC diagnostic", "Unlimited PDF export", "Priority support"],
+    "proFeatures": [
+      "All CV templates",
+      "Unlimited AI interviews",
+      "Personalized opportunities",
+      "Smart match score",
+      "Personalized AI Coach 24/7",
+      "Complete RIASEC diagnostic",
+      "Unlimited PDF export",
+      "Priority support"
+    ],
     "proSubscribe": "Subscribe for $5/mo",
     "currentPlan": "Current plan",
     "yourCurrentPlan": "Your current plan",
@@ -581,7 +578,15 @@
     "securePayment": "Secure payment with Stripe",
     "cancelAnytime": "Cancel anytime",
     "backToPlans": "Back to plans",
-    "proFeatures": ["All CV templates", "Unlimited AI interviews", "Personalized opportunities with match score", "Personalized AI Coach 24/7", "Complete RIASEC diagnostic", "Unlimited PDF export", "Priority support"]
+    "proFeatures": [
+      "All CV templates",
+      "Unlimited AI interviews",
+      "Personalized opportunities with match score",
+      "Personalized AI Coach 24/7",
+      "Complete RIASEC diagnostic",
+      "Unlimited PDF export",
+      "Priority support"
+    ]
   },
   "errors": {
     "generic": "An error has occurred",
