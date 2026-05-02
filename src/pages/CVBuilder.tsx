@@ -26,6 +26,7 @@ import { cn } from '@/lib/utils';
 import { useAI } from '@/hooks/useAI';
 import { useIsMobile } from '@/hooks/use-mobile';
 import html2pdf from 'html2pdf.js';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 export default function CVBuilder() {
   const { id } = useParams<{ id: string }>();
