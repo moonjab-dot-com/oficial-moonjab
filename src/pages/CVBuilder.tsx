@@ -264,12 +264,8 @@ export default function CVBuilder() {
                     />
                   </div>
                   
-                  <DropdownMenuItem onClick={() => setShowTemplateCustomizer(true)}>
-                    <Palette className="mr-2 h-4 w-4" />
-                    Personalizar colores
-                  </DropdownMenuItem>
-                  
                   <DropdownMenuSeparator />
+                  
                   
                   <DropdownMenuItem onClick={() => setShowVersionHistory(true)}>
                     <History className="mr-2 h-4 w-4" />
@@ -298,9 +294,6 @@ export default function CVBuilder() {
                 onChange={(template) => updateCV(currentCV.id, { template })}
               />
               
-              <Button variant="outline" size="icon" onClick={() => setShowTemplateCustomizer(true)} title="Personalizar colores" className="shadow-clovely-sm min-h-[44px] min-w-[44px]">
-                <Palette className="h-4 w-4" />
-              </Button>
               
               <Button variant="outline" onClick={() => setShowVersionHistory(true)} className="shadow-clovely-sm min-h-[44px]">
                 <History className="mr-2 h-4 w-4" />
