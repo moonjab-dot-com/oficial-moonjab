@@ -28,7 +28,6 @@
   },
   "nav": {
     "dashboard": "Dashboard",
-    "opportunities": "Oportunidades",
     "cv": "Mi CV",
     "interviews": "Entrevistas",
     "settings": "Configuración",
@@ -43,48 +42,13 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Bienvenido de nuevo",
-    "dailyJob": "Oportunidad del día",
+    "dailyJob": "Tip del día",
     "progress": "Tu progreso",
     "stats": "Estadísticas",
     "recommendations": "Recursos recomendados",
     "viewAll": "Ver todos",
     "apply": "Aplicar",
     "match": "Compatibilidad"
-  },
-  "opportunities": {
-    "title": "Oportunidades",
-    "subtitle": "Trabajos reales de LinkedIn, Indeed, Glassdoor y más",
-    "search": "Buscar por título, empresa...",
-    "searchLocation": "Ciudad, país...",
-    "searchBtn": "Buscar",
-    "filters": "Filtros",
-    "clearFilters": "Limpiar filtros",
-    "noResults": "No se encontraron oportunidades",
-    "noResultsDesc": "Intenta con otros términos de búsqueda o ajusta los filtros",
-    "location": "Ubicación",
-    "salary": "Salario",
-    "type": "Tipo",
-    "experience": "Experiencia",
-    "remote": "Remoto",
-    "fullTime": "Tiempo completo",
-    "partTime": "Medio tiempo",
-    "contract": "Contrato",
-    "internship": "Pasantía",
-    "saved": "Guardadas",
-    "applied": "Aplicadas",
-    "refresh": "Actualizar",
-    "refreshed": "Oportunidades actualizadas",
-    "refreshedDesc": "Se han cargado las últimas ofertas disponibles",
-    "searching": "Buscando...",
-    "resultsCount": "{{count}} oportunidad(es) encontrada(s)",
-    "loadMore": "Cargar más oportunidades",
-    "rateLimited": "Límite de búsquedas alcanzado. Mostrando datos de ejemplo.",
-    "loadError": "No se pudieron cargar trabajos reales. Mostrando datos de ejemplo.",
-    "savedToast": "Oferta guardada",
-    "savedToastDesc": "Puedes verla en tu lista de guardadas",
-    "removedToast": "Oferta eliminada",
-    "removedToastDesc": "Se ha eliminado de tus guardados",
-    "unlimitedFeature": "oportunidades ilimitadas"
   },
   "cv": {
     "title": "Constructor de CV",
@@ -129,7 +93,7 @@
       "benefitFeedback": "Retroalimentación Instantánea",
       "benefitFeedbackDesc": "Análisis detallado de tus respuestas con sugerencias de mejora.",
       "benefitImprovement": "Mejora Continua",
-      "benefitImprovementDesc": "Rastrea tu progreso e identifica áreas de oportunidad.",
+      "benefitImprovementDesc": "Rastrea tu progreso e identifica áreas a mejorar.",
       "aiInterviews": "Entrevistas con IA"
     },
     "setup": {
@@ -246,7 +210,6 @@
       "title": "Notificaciones",
       "email": "Notificaciones por email",
       "push": "Notificaciones push",
-      "opportunities": "Nuevas oportunidades",
       "interviews": "Recordatorios de entrevistas"
     },
     "appearance": {
@@ -321,7 +284,7 @@
     "badge": "Plataforma de empleabilidad con IA",
     "heroTitle1": "Construye la carrera que ",
     "heroHighlight": "mereces",
-    "heroSubtitle": "Mejora tu CV, practica entrevistas con IA y encuentra las oportunidades que se alinean con tu perfil. Todo en un solo lugar.",
+    "heroSubtitle": "Mejora tu CV y practica entrevistas con IA. La career platform pensada para estudiantes.",
     "ctaStart": "Comenzar ahora",
     "ctaTry": "Pruébalo primero y decide",
     "checkGuest": "Modo invitado gratuito",
@@ -339,7 +302,11 @@
       "cv": {
         "title": "CV inteligente con IA",
         "description": "Crea un currículum optimizado para ATS que resalte tus logros y se adapte a cada industria. Nuestro motor analiza y mejora cada sección automáticamente.",
-        "tags": ["Plantillas profesionales", "Optimización ATS", "Exportar PDF"]
+        "tags": [
+          "Plantillas profesionales",
+          "Optimización ATS",
+          "Exportar PDF"
+        ]
       },
       "diagnostic": {
         "title": "Diagnóstico vocacional",
@@ -348,11 +315,6 @@
       "interview": {
         "title": "Simulador de entrevistas",
         "description": "Practica con un entrevistador IA que adapta preguntas a tu industria y da feedback en tiempo real."
-      },
-      "opportunities": {
-        "title": "Oportunidades que encajan contigo",
-        "description": "Nuestro algoritmo cruza tu perfil con miles de ofertas para mostrarte solo las que realmente coinciden con tus habilidades y objetivos.",
-        "tags": ["Match inteligente", "Filtros avanzados", "Alertas personalizadas"]
       }
     },
     "how": {
@@ -362,18 +324,26 @@
       "step1Desc": "Completa un diagnóstico inteligente que identifica tus fortalezas, intereses y el tipo de roles donde más puedes destacar.",
       "step2Title": "Prepárate con IA",
       "step2Desc": "Construye un CV optimizado y practica entrevistas con retroalimentación personalizada en tiempo real.",
-      "step3Title": "Conecta con oportunidades",
+      "step3Title": "Consigue tu primer empleo",
       "step3Desc": "Recibe ofertas laborales alineadas a tu perfil y postula con un CV adaptado a cada posición."
     },
     "deepDive": {
       "cvLabel": "CV Builder",
       "cvTitle": "Tu mejor versión profesional, en minutos",
       "cvDesc": "No más horas luchando con el formato. Nuestro editor inteligente analiza tu experiencia y genera un CV que pasa los filtros ATS y captura la atención de reclutadores.",
-      "cvPoints": ["Sugerencias de mejora con IA", "Adaptación por industria", "Exportación en PDF profesional"],
+      "cvPoints": [
+        "Sugerencias de mejora con IA",
+        "Adaptación por industria",
+        "Exportación en PDF profesional"
+      ],
       "interviewLabel": "Entrevistas IA",
       "interviewTitle": "Practica hasta sentir confianza total",
       "interviewDesc": "Nuestro simulador reproduce escenarios reales de entrevista adaptados a tu rol e industria. Recibe retroalimentación inmediata sobre tus respuestas.",
-      "interviewPoints": ["Preguntas contextuales por rol", "Análisis de respuestas en tiempo real", "Historial de sesiones y progreso"],
+      "interviewPoints": [
+        "Preguntas contextuales por rol",
+        "Análisis de respuestas en tiempo real",
+        "Historial de sesiones y progreso"
+      ],
       "interviewerAI": "Entrevistador IA"
     },
     "testimonials": {
@@ -387,7 +357,7 @@
       "t2Text": "Practiqué entrevistas con la IA hasta sentirme seguro. En mi primera entrevista real respondí con una confianza que nunca había tenido.",
       "t3Name": "Camila R.",
       "t3Role": "Analista de Marketing",
-      "t3Text": "Usé el modo invitado primero para probar. En una semana me suscribí porque el match de oportunidades me mostró vacantes que realmente se alineaban con mi perfil."
+      "t3Text": "Usé el modo invitado primero para probar. En una semana me suscribí porque las plantillas premium y el feedback de IA hicieron destacar mi CV."
     },
     "pricing": {
       "label": "Precios",
@@ -396,12 +366,24 @@
       "guestMode": "Modo invitado",
       "guestDesc": "Explora las funciones básicas",
       "forever": "Para siempre",
-      "guestFeatures": ["1 plantilla de CV", "Oportunidades genéricas", "Diagnóstico básico", "Funciones limitadas"],
+      "guestFeatures": [
+        "1 plantilla de CV",
+        "Plantillas básicas",
+        "Diagnóstico básico",
+        "Funciones limitadas"
+      ],
       "tryFree": "Probar gratis",
       "recommended": "Recomendado",
       "proDesc": "Todo lo que necesitas",
       "billedMonthly": "Facturado mensualmente",
-      "proFeatures": ["Todas las plantillas de CV", "Entrevistas ilimitadas con IA", "Oportunidades personalizadas", "Match score inteligente", "Diagnóstico completo RIASEC", "Exportación PDF ilimitada"],
+      "proFeatures": [
+        "Todas las plantillas de CV",
+        "Entrevistas ilimitadas con IA",
+        "Feedback de IA personalizado",
+        "Match score inteligente",
+        "Diagnóstico completo RIASEC",
+        "Exportación PDF ilimitada"
+      ],
       "startNow": "Comenzar ahora"
     },
     "cta": {
@@ -466,8 +448,8 @@
       "a2": "Sí, puedes cancelar tu suscripción cuando quieras desde la sección de Configuración > Suscripción. No hay penalizaciones ni preguntas. Tu acceso continuará hasta el final del período de facturación actual. Si cancelas dentro de los primeros 7 días, recibirás un reembolso completo.",
       "q3": "¿Cómo exporto mi CV a PDF?",
       "a3": "Una vez que hayas creado tu CV en el editor, simplemente haz clic en el botón \"Exportar\" en la esquina superior derecha. Tu CV se descargará automáticamente en formato PDF, optimizado para sistemas ATS y listo para enviar a empleadores.",
-      "q4": "¿Las oportunidades de trabajo son reales?",
-      "a4": "Sí, todas las oportunidades provienen de fuentes verificadas como LinkedIn, Indeed, Glassdoor y otras plataformas de empleo reconocidas. Cada oportunidad incluye un enlace directo para aplicar en la fuente original.",
+      "q4": "¿MoonJab está pensado realmente para estudiantes?",
+      "a4": "Sí, MoonJab está diseñado específicamente para estudiantes universitarios y recién graduados en LATAM.",
       "q5": "¿Cómo funciona el simulador de entrevistas?",
       "a5": "Nuestro simulador genera 10 preguntas realistas basadas en el puesto, nivel de experiencia y descripción del trabajo que proporciones. Puedes responder por texto o video. Nuestra IA analiza tus respuestas y te da feedback detallado sobre contenido, estructura, y áreas de mejora específicas.",
       "q6": "¿Qué métodos de pago aceptan?",
@@ -532,11 +514,25 @@
     "portalError": "Error al abrir el portal",
     "guestMode": "Modo invitado",
     "guestDesc": "Explora las funciones básicas",
-    "guestFeatures": ["1 plantilla de CV", "Oportunidades genéricas", "Diagnóstico básico", "Funciones limitadas"],
+    "guestFeatures": [
+      "1 plantilla de CV",
+      "Plantillas básicas",
+      "Diagnóstico básico",
+      "Funciones limitadas"
+    ],
     "tryFree": "Probar gratis",
     "proName": "Pro",
     "proDesc": "Todo lo que necesitas para crecer",
-    "proFeatures": ["Todas las plantillas de CV", "Entrevistas ilimitadas con IA", "Oportunidades personalizadas", "Match score inteligente", "Coach IA personalizado 24/7", "Diagnóstico completo RIASEC", "Exportación PDF ilimitada", "Soporte prioritario"],
+    "proFeatures": [
+      "Todas las plantillas de CV",
+      "Entrevistas ilimitadas con IA",
+      "Feedback de IA personalizado",
+      "Match score inteligente",
+      "Coach IA personalizado 24/7",
+      "Diagnóstico completo RIASEC",
+      "Exportación PDF ilimitada",
+      "Soporte prioritario"
+    ],
     "proSubscribe": "Suscribirse por $5/mes",
     "currentPlan": "Plan actual",
     "yourCurrentPlan": "Tu plan actual",
@@ -549,9 +545,9 @@
       "q2": "¿Qué métodos de pago aceptan?",
       "a2": "Procesamos los pagos de forma segura a través de Stripe. Aceptamos Visa, Mastercard y las principales tarjetas de crédito y débito.",
       "q3": "¿Qué puedo hacer en modo invitado?",
-      "a3": "Puedes explorar la plataforma con funciones limitadas: 1 plantilla de CV, oportunidades genéricas y un diagnóstico básico. Es ideal para conocer MoonJab antes de suscribirte.",
+      "a3": "Puedes explorar la plataforma con funciones limitadas: 1 plantilla de CV (Creativo) y un diagnóstico básico. Es ideal para conocer MoonJab antes de suscribirte.",
       "q4": "¿Qué se desbloquea con el plan Pro?",
-      "a4": "Acceso a todas las plantillas de CV, entrevistas ilimitadas con IA, oportunidades personalizadas con match score, diagnóstico completo RIASEC, coach IA 24/7 y exportación PDF ilimitada.",
+      "a4": "Acceso a todas las plantillas de CV, entrevistas ilimitadas con IA, diagnóstico completo RIASEC, coach IA 24/7 y exportación PDF ilimitada.",
       "q5": "¿Se renueva automáticamente?",
       "a5": "Sí, la suscripción se renueva cada mes. Puedes cancelar antes de la siguiente fecha de cobro para evitar cargos futuros.",
       "q6": "¿Mis datos están seguros?",
@@ -581,7 +577,15 @@
     "securePayment": "Pago seguro con Stripe",
     "cancelAnytime": "Cancela cuando quieras",
     "backToPlans": "Volver a planes",
-    "proFeatures": ["Todas las plantillas de CV", "Entrevistas ilimitadas con IA", "Oportunidades personalizadas con match score", "Coach IA personalizado 24/7", "Diagnóstico completo RIASEC", "Exportación PDF ilimitada", "Soporte prioritario"]
+    "proFeatures": [
+      "Todas las plantillas de CV",
+      "Entrevistas ilimitadas con IA",
+      "Feedback de IA personalizado con match score",
+      "Coach IA personalizado 24/7",
+      "Diagnóstico completo RIASEC",
+      "Exportación PDF ilimitada",
+      "Soporte prioritario"
+    ]
   },
   "errors": {
     "generic": "Ha ocurrido un error",

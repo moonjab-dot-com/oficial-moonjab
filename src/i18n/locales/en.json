@@ -28,7 +28,6 @@
   },
   "nav": {
     "dashboard": "Dashboard",
-    "opportunities": "Opportunities",
     "cv": "My CV",
     "interviews": "Interviews",
     "settings": "Settings",
@@ -50,41 +49,6 @@
     "viewAll": "View all",
     "apply": "Apply",
     "match": "Match"
-  },
-  "opportunities": {
-    "title": "Opportunities",
-    "subtitle": "Real jobs from LinkedIn, Indeed, Glassdoor and more",
-    "search": "Search by title, company...",
-    "searchLocation": "City, country...",
-    "searchBtn": "Search",
-    "filters": "Filters",
-    "clearFilters": "Clear filters",
-    "noResults": "No opportunities found",
-    "noResultsDesc": "Try different search terms or adjust the filters",
-    "location": "Location",
-    "salary": "Salary",
-    "type": "Type",
-    "experience": "Experience",
-    "remote": "Remote",
-    "fullTime": "Full time",
-    "partTime": "Part time",
-    "contract": "Contract",
-    "internship": "Internship",
-    "saved": "Saved",
-    "applied": "Applied",
-    "refresh": "Refresh",
-    "refreshed": "Opportunities updated",
-    "refreshedDesc": "Latest available listings have been loaded",
-    "searching": "Searching...",
-    "resultsCount": "{{count}} opportunity(ies) found",
-    "loadMore": "Load more opportunities",
-    "rateLimited": "Search limit reached. Showing sample data.",
-    "loadError": "Could not load real jobs. Showing sample data.",
-    "savedToast": "Job saved",
-    "savedToastDesc": "You can view it in your saved list",
-    "removedToast": "Job removed",
-    "removedToastDesc": "It has been removed from your saved list",
-    "unlimitedFeature": "unlimited opportunities"
   },
   "cv": {
     "title": "CV Builder",
@@ -129,7 +93,7 @@
       "benefitFeedback": "Instant Feedback",
       "benefitFeedbackDesc": "Detailed analysis of your answers with improvement suggestions.",
       "benefitImprovement": "Continuous Improvement",
-      "benefitImprovementDesc": "Track your progress and identify areas of opportunity.",
+      "benefitImprovementDesc": "Track your progress and identify areas to improve.",
       "aiInterviews": "AI Interviews"
     },
     "setup": {
@@ -246,7 +210,6 @@
       "title": "Notifications",
       "email": "Email notifications",
       "push": "Push notifications",
-      "opportunities": "New opportunities",
       "interviews": "Interview reminders"
     },
     "appearance": {
@@ -321,7 +284,7 @@
     "badge": "AI-powered employability platform",
     "heroTitle1": "Build the career you ",
     "heroHighlight": "deserve",
-    "heroSubtitle": "Improve your CV, practice interviews with AI, and find opportunities that align with your profile. All in one place.",
+    "heroSubtitle": "Improve your CV and practice interviews with AI. The career platform built for students.",
     "ctaStart": "Get started",
     "ctaTry": "Try it first, decide later",
     "checkGuest": "Free guest mode",
@@ -339,7 +302,11 @@
       "cv": {
         "title": "AI-powered smart CV",
         "description": "Create an ATS-optimized resume that highlights your achievements and adapts to every industry. Our engine analyzes and improves each section automatically.",
-        "tags": ["Professional templates", "ATS optimization", "Export PDF"]
+        "tags": [
+          "Professional templates",
+          "ATS optimization",
+          "Export PDF"
+        ]
       },
       "diagnostic": {
         "title": "Career diagnostic",
@@ -348,11 +315,6 @@
       "interview": {
         "title": "Interview simulator",
         "description": "Practice with an AI interviewer that adapts questions to your industry and provides real-time feedback."
-      },
-      "opportunities": {
-        "title": "Opportunities that fit you",
-        "description": "Our algorithm matches your profile with thousands of listings to show only those that truly match your skills and goals.",
-        "tags": ["Smart matching", "Advanced filters", "Custom alerts"]
       }
     },
     "how": {
@@ -362,18 +324,26 @@
       "step1Desc": "Complete a smart diagnostic that identifies your strengths, interests, and the types of roles where you can excel.",
       "step2Title": "Prepare with AI",
       "step2Desc": "Build an optimized CV and practice interviews with personalized real-time feedback.",
-      "step3Title": "Connect with opportunities",
+      "step3Title": "Land your first job",
       "step3Desc": "Receive job offers aligned with your profile and apply with a CV tailored to each position."
     },
     "deepDive": {
       "cvLabel": "CV Builder",
       "cvTitle": "Your best professional version, in minutes",
       "cvDesc": "No more hours struggling with formatting. Our smart editor analyzes your experience and generates a CV that passes ATS filters and captures recruiters' attention.",
-      "cvPoints": ["AI-powered improvement suggestions", "Industry-specific adaptation", "Professional PDF export"],
+      "cvPoints": [
+        "AI-powered improvement suggestions",
+        "Industry-specific adaptation",
+        "Professional PDF export"
+      ],
       "interviewLabel": "AI Interviews",
       "interviewTitle": "Practice until you feel total confidence",
       "interviewDesc": "Our simulator reproduces real interview scenarios adapted to your role and industry. Receive immediate feedback on your answers.",
-      "interviewPoints": ["Role-specific contextual questions", "Real-time answer analysis", "Session history and progress"],
+      "interviewPoints": [
+        "Role-specific contextual questions",
+        "Real-time answer analysis",
+        "Session history and progress"
+      ],
       "interviewerAI": "AI Interviewer"
     },
     "testimonials": {
@@ -387,7 +357,7 @@
       "t2Text": "I practiced interviews with AI until I felt confident. In my first real interview, I responded with a confidence I had never had before.",
       "t3Name": "Camila R.",
       "t3Role": "Marketing Analyst",
-      "t3Text": "I used guest mode first to try it out. Within a week I subscribed because the opportunity matching showed me positions that truly aligned with my profile."
+      "t3Text": "I used guest mode first to try it out. Within a week I subscribed because the premium templates and AI feedback made my CV stand out."
     },
     "pricing": {
       "label": "Pricing",
@@ -396,12 +366,24 @@
       "guestMode": "Guest mode",
       "guestDesc": "Explore basic features",
       "forever": "Forever",
-      "guestFeatures": ["1 CV template", "Generic opportunities", "Basic diagnostic", "Limited features"],
+      "guestFeatures": [
+        "1 CV template",
+        "Basic templates",
+        "Basic diagnostic",
+        "Limited features"
+      ],
       "tryFree": "Try free",
       "recommended": "Recommended",
       "proDesc": "Everything you need",
       "billedMonthly": "Billed monthly",
-      "proFeatures": ["All CV templates", "Unlimited AI interviews", "Personalized opportunities", "Smart match score", "Complete RIASEC diagnostic", "Unlimited PDF export"],
+      "proFeatures": [
+        "All CV templates",
+        "Unlimited AI interviews",
+        "Personalized AI feedback",
+        "Smart match score",
+        "Complete RIASEC diagnostic",
+        "Unlimited PDF export"
+      ],
       "startNow": "Get started"
     },
     "cta": {
@@ -466,8 +448,8 @@
       "a2": "Yes, you can cancel your subscription anytime from Settings > Subscription. No penalties, no questions asked. Your access will continue until the end of the current billing period. If you cancel within the first 7 days, you'll receive a full refund.",
       "q3": "How do I export my CV to PDF?",
       "a3": "Once you've created your CV in the editor, simply click the \"Export\" button in the upper right corner. Your CV will automatically download in PDF format, optimized for ATS (Applicant Tracking Systems) and ready to send to employers.",
-      "q4": "Are the job opportunities real?",
-      "a4": "Yes, all opportunities come from verified sources like LinkedIn, Indeed, Glassdoor and other recognized job platforms. Each opportunity includes a direct link to apply at the original source.",
+      "q4": "Is MoonJab really designed for students?",
+      "a4": "Yes, MoonJab is built specifically for university students and recent graduates in LATAM.",
       "q5": "How does the interview simulator work?",
       "a5": "Our simulator generates 10 realistic questions based on the position, experience level, and job description you provide. You can answer via text or video. Our AI analyzes your answers and gives you detailed feedback on content, structure, and specific areas for improvement.",
       "q6": "What payment methods do you accept?",
@@ -532,11 +514,25 @@
     "portalError": "Error opening the portal",
     "guestMode": "Guest mode",
     "guestDesc": "Explore basic features",
-    "guestFeatures": ["1 CV template", "Generic opportunities", "Basic diagnostic", "Limited features"],
+    "guestFeatures": [
+      "1 CV template",
+      "Basic templates",
+      "Basic diagnostic",
+      "Limited features"
+    ],
     "tryFree": "Try free",
     "proName": "Pro",
     "proDesc": "Everything you need to grow",
-    "proFeatures": ["All CV templates", "Unlimited AI interviews", "Personalized opportunities", "Smart match score", "Personalized AI Coach 24/7", "Complete RIASEC diagnostic", "Unlimited PDF export", "Priority support"],
+    "proFeatures": [
+      "All CV templates",
+      "Unlimited AI interviews",
+      "Personalized AI feedback",
+      "Smart match score",
+      "Personalized AI Coach 24/7",
+      "Complete RIASEC diagnostic",
+      "Unlimited PDF export",
+      "Priority support"
+    ],
     "proSubscribe": "Subscribe for $5/mo",
     "currentPlan": "Current plan",
     "yourCurrentPlan": "Your current plan",
@@ -549,9 +545,9 @@
       "q2": "What payment methods do you accept?",
       "a2": "We process payments securely through Stripe. We accept Visa, Mastercard and major credit and debit cards.",
       "q3": "What can I do in guest mode?",
-      "a3": "You can explore the platform with limited features: 1 CV template, generic opportunities and a basic diagnostic. It's ideal for getting to know MoonJab before subscribing.",
+      "a3": "You can explore the platform with limited features: 1 CV template (Creativo) and a basic diagnostic. It's ideal for getting to know MoonJab before subscribing.",
       "q4": "What does the Pro plan unlock?",
-      "a4": "Access to all CV templates, unlimited AI interviews, personalized opportunities with match score, complete RIASEC diagnostic, AI coach 24/7 and unlimited PDF export.",
+      "a4": "Access to all CV templates, unlimited AI interviews, complete RIASEC diagnostic, AI coach 24/7 and unlimited PDF export.",
       "q5": "Does it auto-renew?",
       "a5": "Yes, the subscription renews every month. You can cancel before the next billing date to avoid future charges.",
       "q6": "Is my data secure?",
@@ -581,7 +577,15 @@
     "securePayment": "Secure payment with Stripe",
     "cancelAnytime": "Cancel anytime",
     "backToPlans": "Back to plans",
-    "proFeatures": ["All CV templates", "Unlimited AI interviews", "Personalized opportunities with match score", "Personalized AI Coach 24/7", "Complete RIASEC diagnostic", "Unlimited PDF export", "Priority support"]
+    "proFeatures": [
+      "All CV templates",
+      "Unlimited AI interviews",
+      "Personalized AI feedback with match score",
+      "Personalized AI Coach 24/7",
+      "Complete RIASEC diagnostic",
+      "Unlimited PDF export",
+      "Priority support"
+    ]
   },
   "errors": {
     "generic": "An error has occurred",

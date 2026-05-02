@@ -39,7 +39,6 @@ Recopilamos información que nos proporcionas directamente cuando utilizas MoonJ
 **Información de uso:**
 - Interacciones con la plataforma
 - Sesiones de simulación de entrevistas
-- Oportunidades guardadas y aplicaciones
 
 **Información técnica:**
 - Dirección IP (anonimizada)
@@ -55,7 +54,6 @@ Utilizamos la información recopilada para:
 - Generar diagnósticos de carrera personalizados
 - Crear y optimizar tu CV
 - Ofrecer simulaciones de entrevista relevantes
-- Recomendar oportunidades laborales compatibles
 
 **Mejorar la experiencia:**
 - Personalizar el contenido según tu perfil
@@ -65,7 +63,6 @@ Utilizamos la información recopilada para:
 
 **Comunicación:**
 - Enviar actualizaciones importantes del servicio
-- Notificarte sobre nuevas oportunidades relevantes
 - Compartir consejos y recursos de carrera (si lo autorizas)
 
 **Nunca usamos tu información para:**

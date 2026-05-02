@@ -102,8 +102,8 @@ const LandingContent = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
-        title="MoonJab — Plataforma de Empleabilidad con IA | CV, Entrevistas y Oportunidades"
-        description="Crea tu CV optimizado para ATS, practica entrevistas con IA y encuentra oportunidades laborales en LATAM. La plataforma #1 de empleabilidad con inteligencia artificial."
+        title="MoonJab — Plataforma de Carrera para Estudiantes | CV Builder & Entrevistas con IA"
+        description="Crea tu CV optimizado para ATS y practica entrevistas con IA. La plataforma de carrera #1 para estudiantes en LATAM."
         path="/"
       />
       {/* ── Navbar ── */}

@@ -26,14 +26,6 @@ export interface RoleDashboardConfig {
     duration: string;
     icon: string;
   }[];
-  opportunities?: {
-    company: string;
-    position: string;
-    match: number;
-    salary: string;
-    location: string;
-    logo: string;
-  }[];
 }
 
 // Helper function to create default config for roles without specific config
@@ -56,11 +48,6 @@ function getDefaultConfig(roleName: string): RoleDashboardConfig {
       { type: 'Curso', title: 'Desarrollo profesional avanzado', duration: '4h', icon: 'book-open' },
       { type: 'Artículo', title: 'Mejores prácticas en la industria', duration: '20min', icon: 'newspaper' },
       { type: 'Video', title: 'Tendencias y futuro del sector', duration: '30min', icon: 'video' },
-    ],
-    opportunities: [
-      { company: 'Empresas Top', position: roleName, match: 85, salary: 'Competitivo', location: 'Remoto', logo: 'ET' },
-      { company: 'Tech Leaders', position: `${roleName} Senior`, match: 82, salary: 'A negociar', location: 'Híbrido', logo: 'TL' },
-      { company: 'Innovadores', position: `${roleName} Jr/Mid`, match: 78, salary: '$2.5-4K', location: 'Flexible', logo: 'IN' },
     ]
   };
 }
@@ -84,11 +71,6 @@ export function getDashboardConfig(role: ProfessionalRole): RoleDashboardConfig 
       resources: [
         { type: 'Curso', title: 'Advanced User Research Methods', duration: '3h', icon: 'search' },
         { type: 'Artículo', title: 'Mejores prácticas en diseño', duration: '15min', icon: 'book-open' },
-      ],
-      opportunities: [
-        { company: 'Mercado Libre', position: 'UX Designer', match: 94, salary: '$3-4.5K', location: 'Remoto', logo: 'ML' },
-        { company: 'Globant', position: 'UX Designer Sr', match: 91, salary: '$3.5-5K', location: 'Híbrido', logo: 'GL' },
-        { company: 'Rappi', position: 'Product Designer', match: 87, salary: 'Competitivo', location: 'Presencial', logo: 'RP' },
       ]
     },
     ui_designer: {
@@ -165,11 +147,6 @@ export function getDashboardConfig(role: ProfessionalRole): RoleDashboardConfig 
       resources: [
         { type: 'Curso', title: 'React Performance', duration: '4h', icon: 'zap' },
         { type: 'Artículo', title: 'Clean Code en JavaScript', duration: '18min', icon: 'code' },
-      ],
-      opportunities: [
-        { company: 'Google', position: 'Frontend Engineer', match: 95, salary: '$5-7K', location: 'Remoto', logo: 'GO' },
-        { company: 'Meta', position: 'React Developer', match: 92, salary: '$4.5-6K', location: 'Híbrido', logo: 'MT' },
-        { company: 'Vercel', position: 'Senior Frontend', match: 88, salary: '$6-8K', location: 'Remoto', logo: 'VR' },
       ]
     },
     developer_backend: {
@@ -374,7 +351,7 @@ export function getDashboardConfig(role: ProfessionalRole): RoleDashboardConfig 
       suggestedTasks: [
         { title: 'Análisis fundamental de empresa', xp: 130, category: 'analysis' },
         { title: 'Rebalancear portafolio', xp: 100, category: 'portfolio' },
-        { title: 'Research de oportunidades', xp: 120, category: 'research' },
+        { title: 'Research de mercado laboral', xp: 120, category: 'research' },
       ],
       resources: [
         { type: 'Curso', title: 'Investment Analysis', duration: '6h', icon: 'briefcase' },
@@ -593,11 +570,5 @@ export function getDashboardConfig(role: ProfessionalRole): RoleDashboardConfig 
     }
   };
 
-  const config = configs[role] || configs.other;
-  
-  // Ensure opportunities are always present
-  return {
-    ...config,
-    opportunities: config.opportunities || getDefaultConfig(role).opportunities
-  };
+  return configs[role] || configs.other;
 }

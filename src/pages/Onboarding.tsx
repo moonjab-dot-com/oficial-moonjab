@@ -62,7 +62,7 @@ const Onboarding = () => {
               progreso: {
                 cv_completado: false,
                 entrevistas_realizadas: 0,
-                oportunidades_guardadas: 0,
+                
                 onboarding_completado: true,
               }
             })

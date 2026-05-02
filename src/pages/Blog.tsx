@@ -116,7 +116,7 @@ No se trata de coleccionar tarjetas de presentación. El networking efectivo est
 
 - Mantén contacto con ex-colegas
 - Ayuda a otros a conseguir empleo
-- Comparte oportunidades que no son para ti
+- Comparte vacantes que no son para ti
 - Celebra los logros de tu red
 
 ### Los errores más comunes
@@ -166,7 +166,7 @@ Los reclutadores pasan en promedio 7 segundos escaneando un CV. En ese tiempo, d
 
 #### 1. Un objetivo genérico
 
-❌ "Busco una oportunidad para crecer profesionalmente"
+❌ "Busco un rol que me permita crecer profesionalmente"
 ✅ "Product Manager con 5 años en fintech buscando liderar equipos en startups B2B"
 
 #### 2. Describir responsabilidades, no logros
@@ -374,7 +374,7 @@ Lista 3-5 razones concretas por las que mereces más:
 1. Agradece genuinamente
 2. Pide tiempo (24-48 horas)
 3. No muestres emoción excesiva
-4. "Estoy muy emocionado/a por esta oportunidad. Me gustaría revisar los detalles y volver con algunas preguntas."
+4. "Estoy muy emocionado/a por este rol. Me gustaría revisar los detalles y volver con algunas preguntas."
 
 #### Al contraofertar
 
@@ -400,7 +400,7 @@ Si el salario es inamovible, negocia:
 
 ### Script de ejemplo
 
-"Muchas gracias por la oferta. Estoy muy entusiasmado con la oportunidad de unirme al equipo. Después de revisar el paquete y compararlo con mi investigación de mercado para roles similares, me gustaría discutir el salario base. Dado mi experiencia de 5 años en [área] y mis logros en [resultado específico], estaba esperando algo más cercano a $X. ¿Hay espacio para ajustar esto?"
+"Muchas gracias por la oferta. Estoy muy entusiasmado con la posibilidad de unirme al equipo. Después de revisar el paquete y compararlo con mi investigación de mercado para roles similares, me gustaría discutir el salario base. Dado mi experiencia de 5 años en [área] y mis logros en [resultado específico], estaba esperando algo más cercano a $X. ¿Hay espacio para ajustar esto?"
 
 ---
 

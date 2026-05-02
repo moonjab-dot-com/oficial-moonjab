@@ -38,7 +38,7 @@ const PLAN_FEATURES = {
   'Diagnóstico de carrera',
   'Hasta 3 CVs',
   '5 simulaciones de entrevista/mes',
-  'Acceso a oportunidades',
+  'Plantillas premium de CV',
   'Coach IA básico'],
 
   premium: [
