@@ -7,7 +7,7 @@ import {
   ArrowRight, Star, Instagram, CheckCircle, Compass, BarChart3,
   FileText, MessageSquare, Target, TrendingUp, Shield,
   Users, ChevronRight, Zap, ArrowUpRight, Layers, Award,
-  GraduationCap, Briefcase, Sparkles, LineChart, Rocket,
+  GraduationCap, Sparkles, LineChart, Rocket,
   Eye, BookOpen, Check, Mic, Menu, X } from
 'lucide-react';
 import { OfficialLogo } from '@/components/OfficialLogo';
@@ -93,7 +93,7 @@ const LandingContent = () => {
   ];
 
   const cvTags = t('landing.features.cv.tags', { returnObjects: true }) as string[];
-  const oppTags = t('landing.features.opportunities.tags', { returnObjects: true }) as string[];
+  
   const cvPoints = t('landing.deepDive.cvPoints', { returnObjects: true }) as string[];
   const interviewPoints = t('landing.deepDive.interviewPoints', { returnObjects: true }) as string[];
   const guestFeatures = t('landing.pricing.guestFeatures', { returnObjects: true }) as string[];
@@ -286,23 +286,6 @@ const LandingContent = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">{t('landing.features.interview.description')}</p>
             </motion.div>
 
-            {/* Large card — Opportunities */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}
-              className="md:col-span-2 group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
-              <div className="relative">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                  <Briefcase className="h-5 w-5 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">{t('landing.features.opportunities.title')}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-md mb-6">{t('landing.features.opportunities.description')}</p>
-                <div className="flex flex-wrap gap-2">
-                  {oppTags.map((tag) =>
-                    <span key={tag} className="px-2.5 py-1 text-[11px] rounded-md bg-primary/[0.06] text-primary font-medium">{tag}</span>
-                  )}
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -498,7 +481,7 @@ const LandingContent = () => {
               <p className="text-sm font-semibold mb-1">Pro</p>
               <p className="text-xs text-muted-foreground mb-5">{t('landing.pricing.proDesc')}</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <p className="text-3xl font-bold">$15</p>
+                <p className="text-3xl font-bold">$5</p>
                 <span className="text-sm text-muted-foreground">/mes</span>
               </div>
               <p className="text-xs text-muted-foreground mb-6">{t('landing.pricing.billedMonthly')}</p>

@@ -9,8 +9,6 @@ type EventType =
   | 'cv_exported'
   | 'interview_started'
   | 'interview_completed'
-  | 'opportunity_saved'
-  | 'opportunity_applied'
   | 'profile_updated'
   | 'login'
   | 'signup';

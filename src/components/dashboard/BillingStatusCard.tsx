@@ -71,7 +71,7 @@ export function BillingStatusCard() {
         ) : (
           <Crown className="h-3 w-3 mr-1" />
         )}
-        {isPremium ? 'Gestionar suscripción' : 'Upgrade a Pro — $15/mes'}
+        {isPremium ? 'Gestionar suscripción' : 'Upgrade a Pro — $5/mes'}
       </Button>
     </div>
   );
