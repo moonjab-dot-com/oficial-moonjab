@@ -113,7 +113,8 @@ export default function CVBuilder() {
       const analysis = await analyzeCVintense(currentCV, currentCV.personal.title);
       setAnalysisData(analysis);
       setShowAnalysis(true);
-      
+      void trackEvent('cv_improved', { cvId: currentCV.id });
+
       toast({
         title: 'Análisis completado',
         description: 'Revisa las sugerencias personalizadas para mejorar tu CV',
@@ -192,6 +193,7 @@ export default function CVBuilder() {
       .from(element)
       .save()
       .then(() => {
+        void trackEvent('cv_exported', { cvId: currentCV.id, fileName });
         toast({
           title: 'PDF exportado',
           description: `Tu CV ha sido descargado como ${fileName}`,
