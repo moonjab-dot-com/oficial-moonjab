@@ -16,7 +16,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { getDashboardBasePath } from '@/lib/authRouting';
-import { Home, FileText, Settings, Mic, Shield, Menu, ArrowUpRight } from 'lucide-react';
+import { Home, FileText, Settings, Mic, Shield, Menu, ArrowUpRight, Crown } from 'lucide-react';
 import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
 
 export default function DashboardLayout() {
@@ -87,8 +87,9 @@ export default function DashboardLayout() {
   const mainNav = useMemo(() => {
     const items = [
       { icon: Home, label: t('nav.dashboard'), path: dashboardBasePath },
-      { icon: FileText, label: t('nav.cv'), path: `${dashboardBasePath}/cvs` },
+      { icon: FileText, label: 'CV Builder', path: `${dashboardBasePath}/cvs` },
       { icon: Mic, label: t('nav.interviews'), path: `${dashboardBasePath}/interviews` },
+      { icon: Crown, label: 'Suscripción', path: '/pricing' },
     ];
     if (isAdmin && !isTrial) items.push({ icon: Shield, label: 'Admin', path: `${dashboardBasePath}/admin` });
     return items;

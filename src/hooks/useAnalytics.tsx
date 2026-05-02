@@ -7,6 +7,8 @@ type EventType =
   | 'role_detected'
   | 'cv_created'
   | 'cv_exported'
+  | 'cv_improved'
+  | 'cv_updated'
   | 'interview_started'
   | 'interview_completed'
   | 'profile_updated'

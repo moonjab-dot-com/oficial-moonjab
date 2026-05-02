@@ -8,6 +8,7 @@ import { useInterviewStore } from '@/store/useInterviewStore';
 import { ProgressBar } from '@/components/dashboard/ProgressBar';
 import { RecommendedResources } from '@/components/dashboard/RecommendedResources';
 import { BillingStatusCard } from '@/components/dashboard/BillingStatusCard';
+import { AnalyticsPanel } from '@/components/dashboard/AnalyticsPanel';
 import { UpgradeBanner } from '@/components/UpgradeBanner';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import {
@@ -285,6 +286,17 @@ const Dashboard = () => {
             </Link>
           ))}
         </motion.div>
+
+        {!isTrial && !isGuestMode && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.18 }}
+            className="mb-6"
+          >
+            <AnalyticsPanel dashboardBasePath={dashboardBasePath} />
+          </motion.div>
+        )}
 
         <div className="grid lg:grid-cols-[1fr_300px] gap-6">
           <div className="space-y-6">
