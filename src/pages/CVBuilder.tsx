@@ -15,6 +15,7 @@ import {
 import { ArrowLeft, Save, Sparkles, Download, History, GitCompare, MoreVertical, Layout } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import CVEditorPanel from '@/components/cv/CVEditorPanel';
+import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
 import CVPreviewPanel from '@/components/cv/CVPreviewPanel';
 import TemplateSelector from '@/components/cv/TemplateSelector';
 import AIAnalysisModal from '@/components/cv/AIAnalysisModal';
@@ -40,6 +41,15 @@ export default function CVBuilder() {
   const [showVersionCompare, setShowVersionCompare] = useState(false);
   const previewRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const { subscribed, productId } = useSubscription();
+  const isPremium = subscribed && productId === MOONJAB_PRO.product_id;
+
+  // Force free users into the Creativo template
+  useEffect(() => {
+    if (currentCV && !isPremium && currentCV.template !== 'creative') {
+      updateCV(currentCV.id, { template: 'creative' });
+    }
+  }, [currentCV?.id, isPremium]);
 
   useEffect(() => {
     if (id === 'new') {
