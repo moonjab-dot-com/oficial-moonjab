@@ -57,10 +57,10 @@ export const UpgradeBanner = ({ onUpgrade }: UpgradeBannerProps) => {
             </div>
             <div className="flex-1">
               <p className="font-semibold text-sm text-foreground mb-0.5">
-                Desbloquea MoonJab Pro por <span className="text-primary">$15/mes</span>
+                Desbloquea MoonJab Pro por <span className="text-primary">$5/mes</span>
               </p>
               <p className="text-xs text-muted-foreground">
-                Todas las plantillas, entrevistas IA, oportunidades personalizadas y más
+                Plantilla Harvard CV, todas las plantillas premium, entrevistas IA y más
               </p>
             </div>
           </div>

@@ -2,8 +2,6 @@ import { lazy } from 'react';
 
 // Lazy load heavy components for better performance
 export const LazyDashboard = lazy(() => import('@/pages/Dashboard'));
-export const LazyOpportunities = lazy(() => import('@/pages/Opportunities'));
-export const LazyOpportunityDetail = lazy(() => import('@/pages/OpportunityDetail'));
 export const LazyCVBuilder = lazy(() => import('@/pages/CVBuilder'));
 export const LazyCVList = lazy(() => import('@/pages/CVList'));
 export const LazyInterviewLanding = lazy(() => import('@/pages/InterviewLanding'));

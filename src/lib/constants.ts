@@ -9,8 +9,8 @@ export const FREE_LIMITS = {
 
 export const PRICING = {
   premium: {
-    monthly: 20,
-    yearly: 200, // ahorra 17%
+    monthly: 5,
+    yearly: 50,
     currency: 'USD',
     trialDays: 7,
   },
@@ -114,9 +114,6 @@ export const XP_REWARDS = {
   cv_update: 30,
   interview_practice: 50,
   weekly_goal: 100,
-  apply_job: 75,
-  get_interview: 200,
-  get_job: 1000,
   streak_7: 100,
   streak_30: 500,
 };
