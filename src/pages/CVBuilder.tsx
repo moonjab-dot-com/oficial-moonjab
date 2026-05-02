@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import { ArrowLeft, Save, Sparkles, Download, History, Palette, GitCompare, MoreVertical, Layout } from 'lucide-react';
+import { ArrowLeft, Save, Sparkles, Download, History, GitCompare, MoreVertical, Layout } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import CVEditorPanel from '@/components/cv/CVEditorPanel';
 import CVPreviewPanel from '@/components/cv/CVPreviewPanel';
@@ -21,7 +21,6 @@ import AIAnalysisModal from '@/components/cv/AIAnalysisModal';
 import VersionHistoryModal from '@/components/cv/VersionHistoryModal';
 import VersionCompareModal from '@/components/cv/VersionCompareModal';
 
-import TemplateCustomizer, { TemplateColors } from '@/components/cv/TemplateCustomizer';
 import { cn } from '@/lib/utils';
 import { useAI } from '@/hooks/useAI';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -39,14 +38,6 @@ export default function CVBuilder() {
   const [isSaving, setIsSaving] = useState(false);
   const [showVersionHistory, setShowVersionHistory] = useState(false);
   const [showVersionCompare, setShowVersionCompare] = useState(false);
-  const [showTemplateCustomizer, setShowTemplateCustomizer] = useState(false);
-  const [templateColors, setTemplateColors] = useState<TemplateColors>({
-    primary: '#1e40af',
-    secondary: '#3b82f6',
-    accent: '#60a5fa',
-    text: '#1f2937',
-    background: '#ffffff',
-  });
   const previewRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
 
