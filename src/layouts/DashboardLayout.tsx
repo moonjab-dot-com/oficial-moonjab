@@ -16,7 +16,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { getDashboardBasePath } from '@/lib/authRouting';
-import { Home, FileText, Settings, Mic, Shield, Menu, ArrowUpRight, Layout, Crown } from 'lucide-react';
+import { Home, FileText, Settings, Mic, Shield, Menu, ArrowUpRight, Crown } from 'lucide-react';
 import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
 
 export default function DashboardLayout() {
@@ -88,7 +88,6 @@ export default function DashboardLayout() {
     const items = [
       { icon: Home, label: t('nav.dashboard'), path: dashboardBasePath },
       { icon: FileText, label: 'CV Builder', path: `${dashboardBasePath}/cvs` },
-      { icon: Layout, label: 'Templates', path: `${dashboardBasePath}/cvs` },
       { icon: Mic, label: t('nav.interviews'), path: `${dashboardBasePath}/interviews` },
       { icon: Crown, label: 'Suscripción', path: '/pricing' },
     ];
