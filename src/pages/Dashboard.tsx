@@ -9,6 +9,7 @@ import { ProgressBar } from '@/components/dashboard/ProgressBar';
 import { RecommendedResources } from '@/components/dashboard/RecommendedResources';
 import { BillingStatusCard } from '@/components/dashboard/BillingStatusCard';
 import { AnalyticsPanel } from '@/components/dashboard/AnalyticsPanel';
+import { NextActionCard } from '@/components/dashboard/NextActionCard';
 import { UpgradeBanner } from '@/components/UpgradeBanner';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import {
