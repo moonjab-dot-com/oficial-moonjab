@@ -12,16 +12,16 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import { ArrowLeft, Save, Sparkles, Download, History, Palette, GitCompare, MoreVertical, Layout } from 'lucide-react';
+import { ArrowLeft, Save, Sparkles, Download, History, GitCompare, MoreVertical, Layout } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import CVEditorPanel from '@/components/cv/CVEditorPanel';
+import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
 import CVPreviewPanel from '@/components/cv/CVPreviewPanel';
 import TemplateSelector from '@/components/cv/TemplateSelector';
 import AIAnalysisModal from '@/components/cv/AIAnalysisModal';
 import VersionHistoryModal from '@/components/cv/VersionHistoryModal';
 import VersionCompareModal from '@/components/cv/VersionCompareModal';
 
-import TemplateCustomizer, { TemplateColors } from '@/components/cv/TemplateCustomizer';
 import { cn } from '@/lib/utils';
 import { useAI } from '@/hooks/useAI';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -39,16 +39,17 @@ export default function CVBuilder() {
   const [isSaving, setIsSaving] = useState(false);
   const [showVersionHistory, setShowVersionHistory] = useState(false);
   const [showVersionCompare, setShowVersionCompare] = useState(false);
-  const [showTemplateCustomizer, setShowTemplateCustomizer] = useState(false);
-  const [templateColors, setTemplateColors] = useState<TemplateColors>({
-    primary: '#1e40af',
-    secondary: '#3b82f6',
-    accent: '#60a5fa',
-    text: '#1f2937',
-    background: '#ffffff',
-  });
   const previewRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const { subscribed, productId } = useSubscription();
+  const isPremium = subscribed && productId === MOONJAB_PRO.product_id;
+
+  // Force free users into the Creativo template
+  useEffect(() => {
+    if (currentCV && !isPremium && currentCV.template !== 'creative') {
+      updateCV(currentCV.id, { template: 'creative' });
+    }
+  }, [currentCV?.id, isPremium]);
 
   useEffect(() => {
     if (id === 'new') {
@@ -273,12 +274,8 @@ export default function CVBuilder() {
                     />
                   </div>
                   
-                  <DropdownMenuItem onClick={() => setShowTemplateCustomizer(true)}>
-                    <Palette className="mr-2 h-4 w-4" />
-                    Personalizar colores
-                  </DropdownMenuItem>
-                  
                   <DropdownMenuSeparator />
+                  
                   
                   <DropdownMenuItem onClick={() => setShowVersionHistory(true)}>
                     <History className="mr-2 h-4 w-4" />
@@ -307,9 +304,6 @@ export default function CVBuilder() {
                 onChange={(template) => updateCV(currentCV.id, { template })}
               />
               
-              <Button variant="outline" size="icon" onClick={() => setShowTemplateCustomizer(true)} title="Personalizar colores" className="shadow-clovely-sm min-h-[44px] min-w-[44px]">
-                <Palette className="h-4 w-4" />
-              </Button>
               
               <Button variant="outline" onClick={() => setShowVersionHistory(true)} className="shadow-clovely-sm min-h-[44px]">
                 <History className="mr-2 h-4 w-4" />
@@ -430,24 +424,6 @@ export default function CVBuilder() {
           onClose={() => setShowVersionCompare(false)}
           currentCV={currentCV}
           versions={currentCV.versions}
-        />
-      )}
-
-
-      {/* Template Customizer Modal */}
-      {showTemplateCustomizer && currentCV && (
-        <TemplateCustomizer
-          open={showTemplateCustomizer}
-          onClose={() => setShowTemplateCustomizer(false)}
-          currentColors={templateColors}
-          onApply={(colors) => {
-            setTemplateColors(colors);
-            toast({
-              title: 'Colores aplicados',
-              description: 'El esquema de colores ha sido actualizado',
-            });
-          }}
-          template={currentCV.template}
         />
       )}
     </div>
