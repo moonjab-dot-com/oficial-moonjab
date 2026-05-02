@@ -42,7 +42,7 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Bienvenido de nuevo",
-    "dailyJob": "Oportunidad del día",
+    "dailyJob": "Tip del día",
     "progress": "Tu progreso",
     "stats": "Estadísticas",
     "recommendations": "Recursos recomendados",
@@ -93,7 +93,7 @@
       "benefitFeedback": "Retroalimentación Instantánea",
       "benefitFeedbackDesc": "Análisis detallado de tus respuestas con sugerencias de mejora.",
       "benefitImprovement": "Mejora Continua",
-      "benefitImprovementDesc": "Rastrea tu progreso e identifica áreas de oportunidad.",
+      "benefitImprovementDesc": "Rastrea tu progreso e identifica áreas a mejorar.",
       "aiInterviews": "Entrevistas con IA"
     },
     "setup": {
@@ -284,7 +284,7 @@
     "badge": "Plataforma de empleabilidad con IA",
     "heroTitle1": "Construye la carrera que ",
     "heroHighlight": "mereces",
-    "heroSubtitle": "Mejora tu CV, practica entrevistas con IA y encuentra las oportunidades que se alinean con tu perfil. Todo en un solo lugar.",
+    "heroSubtitle": "Mejora tu CV y practica entrevistas con IA. La career platform pensada para estudiantes.",
     "ctaStart": "Comenzar ahora",
     "ctaTry": "Pruébalo primero y decide",
     "checkGuest": "Modo invitado gratuito",
@@ -324,7 +324,7 @@
       "step1Desc": "Completa un diagnóstico inteligente que identifica tus fortalezas, intereses y el tipo de roles donde más puedes destacar.",
       "step2Title": "Prepárate con IA",
       "step2Desc": "Construye un CV optimizado y practica entrevistas con retroalimentación personalizada en tiempo real.",
-      "step3Title": "Conecta con oportunidades",
+      "step3Title": "Consigue tu primer empleo",
       "step3Desc": "Recibe ofertas laborales alineadas a tu perfil y postula con un CV adaptado a cada posición."
     },
     "deepDive": {
@@ -357,7 +357,7 @@
       "t2Text": "Practiqué entrevistas con la IA hasta sentirme seguro. En mi primera entrevista real respondí con una confianza que nunca había tenido.",
       "t3Name": "Camila R.",
       "t3Role": "Analista de Marketing",
-      "t3Text": "Usé el modo invitado primero para probar. En una semana me suscribí porque el match de oportunidades me mostró vacantes que realmente se alineaban con mi perfil."
+      "t3Text": "Usé el modo invitado primero para probar. En una semana me suscribí porque las plantillas premium y el feedback de IA hicieron destacar mi CV."
     },
     "pricing": {
       "label": "Precios",
@@ -368,7 +368,7 @@
       "forever": "Para siempre",
       "guestFeatures": [
         "1 plantilla de CV",
-        "Oportunidades genéricas",
+        "Plantillas básicas",
         "Diagnóstico básico",
         "Funciones limitadas"
       ],
@@ -379,7 +379,7 @@
       "proFeatures": [
         "Todas las plantillas de CV",
         "Entrevistas ilimitadas con IA",
-        "Oportunidades personalizadas",
+        "Feedback de IA personalizado",
         "Match score inteligente",
         "Diagnóstico completo RIASEC",
         "Exportación PDF ilimitada"
@@ -516,7 +516,7 @@
     "guestDesc": "Explora las funciones básicas",
     "guestFeatures": [
       "1 plantilla de CV",
-      "Oportunidades genéricas",
+      "Plantillas básicas",
       "Diagnóstico básico",
       "Funciones limitadas"
     ],
@@ -526,7 +526,7 @@
     "proFeatures": [
       "Todas las plantillas de CV",
       "Entrevistas ilimitadas con IA",
-      "Oportunidades personalizadas",
+      "Feedback de IA personalizado",
       "Match score inteligente",
       "Coach IA personalizado 24/7",
       "Diagnóstico completo RIASEC",
@@ -580,7 +580,7 @@
     "proFeatures": [
       "Todas las plantillas de CV",
       "Entrevistas ilimitadas con IA",
-      "Oportunidades personalizadas con match score",
+      "Feedback de IA personalizado con match score",
       "Coach IA personalizado 24/7",
       "Diagnóstico completo RIASEC",
       "Exportación PDF ilimitada",

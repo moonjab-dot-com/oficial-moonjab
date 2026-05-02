@@ -93,7 +93,7 @@
       "benefitFeedback": "Instant Feedback",
       "benefitFeedbackDesc": "Detailed analysis of your answers with improvement suggestions.",
       "benefitImprovement": "Continuous Improvement",
-      "benefitImprovementDesc": "Track your progress and identify areas of opportunity.",
+      "benefitImprovementDesc": "Track your progress and identify areas to improve.",
       "aiInterviews": "AI Interviews"
     },
     "setup": {
@@ -284,7 +284,7 @@
     "badge": "AI-powered employability platform",
     "heroTitle1": "Build the career you ",
     "heroHighlight": "deserve",
-    "heroSubtitle": "Improve your CV, practice interviews with AI, and find opportunities that align with your profile. All in one place.",
+    "heroSubtitle": "Improve your CV and practice interviews with AI. The career platform built for students.",
     "ctaStart": "Get started",
     "ctaTry": "Try it first, decide later",
     "checkGuest": "Free guest mode",
@@ -324,7 +324,7 @@
       "step1Desc": "Complete a smart diagnostic that identifies your strengths, interests, and the types of roles where you can excel.",
       "step2Title": "Prepare with AI",
       "step2Desc": "Build an optimized CV and practice interviews with personalized real-time feedback.",
-      "step3Title": "Connect with opportunities",
+      "step3Title": "Land your first job",
       "step3Desc": "Receive job offers aligned with your profile and apply with a CV tailored to each position."
     },
     "deepDive": {
@@ -357,7 +357,7 @@
       "t2Text": "I practiced interviews with AI until I felt confident. In my first real interview, I responded with a confidence I had never had before.",
       "t3Name": "Camila R.",
       "t3Role": "Marketing Analyst",
-      "t3Text": "I used guest mode first to try it out. Within a week I subscribed because the opportunity matching showed me positions that truly aligned with my profile."
+      "t3Text": "I used guest mode first to try it out. Within a week I subscribed because the premium templates and AI feedback made my CV stand out."
     },
     "pricing": {
       "label": "Pricing",
@@ -368,7 +368,7 @@
       "forever": "Forever",
       "guestFeatures": [
         "1 CV template",
-        "Generic opportunities",
+        "Basic templates",
         "Basic diagnostic",
         "Limited features"
       ],
@@ -379,7 +379,7 @@
       "proFeatures": [
         "All CV templates",
         "Unlimited AI interviews",
-        "Personalized opportunities",
+        "Personalized AI feedback",
         "Smart match score",
         "Complete RIASEC diagnostic",
         "Unlimited PDF export"
@@ -448,8 +448,8 @@
       "a2": "Yes, you can cancel your subscription anytime from Settings > Subscription. No penalties, no questions asked. Your access will continue until the end of the current billing period. If you cancel within the first 7 days, you'll receive a full refund.",
       "q3": "How do I export my CV to PDF?",
       "a3": "Once you've created your CV in the editor, simply click the \"Export\" button in the upper right corner. Your CV will automatically download in PDF format, optimized for ATS (Applicant Tracking Systems) and ready to send to employers.",
-      "q4": "Are the job opportunities real?",
-      "a4": "Yes, all opportunities come from verified sources like LinkedIn, Indeed, Glassdoor and other recognized job platforms. Each opportunity includes a direct link to apply at the original source.",
+      "q4": "Is MoonJab really designed for students?",
+      "a4": "Yes, MoonJab is built specifically for university students and recent graduates in LATAM.",
       "q5": "How does the interview simulator work?",
       "a5": "Our simulator generates 10 realistic questions based on the position, experience level, and job description you provide. You can answer via text or video. Our AI analyzes your answers and gives you detailed feedback on content, structure, and specific areas for improvement.",
       "q6": "What payment methods do you accept?",
@@ -516,7 +516,7 @@
     "guestDesc": "Explore basic features",
     "guestFeatures": [
       "1 CV template",
-      "Generic opportunities",
+      "Basic templates",
       "Basic diagnostic",
       "Limited features"
     ],
@@ -526,7 +526,7 @@
     "proFeatures": [
       "All CV templates",
       "Unlimited AI interviews",
-      "Personalized opportunities",
+      "Personalized AI feedback",
       "Smart match score",
       "Personalized AI Coach 24/7",
       "Complete RIASEC diagnostic",
@@ -545,9 +545,9 @@
       "q2": "What payment methods do you accept?",
       "a2": "We process payments securely through Stripe. We accept Visa, Mastercard and major credit and debit cards.",
       "q3": "What can I do in guest mode?",
-      "a3": "You can explore the platform with limited features: 1 CV template, generic opportunities and a basic diagnostic. It's ideal for getting to know MoonJab before subscribing.",
+      "a3": "You can explore the platform with limited features: 1 CV template (Creativo) and a basic diagnostic. It's ideal for getting to know MoonJab before subscribing.",
       "q4": "What does the Pro plan unlock?",
-      "a4": "Access to all CV templates, unlimited AI interviews, personalized opportunities with match score, complete RIASEC diagnostic, AI coach 24/7 and unlimited PDF export.",
+      "a4": "Access to all CV templates, unlimited AI interviews, complete RIASEC diagnostic, AI coach 24/7 and unlimited PDF export.",
       "q5": "Does it auto-renew?",
       "a5": "Yes, the subscription renews every month. You can cancel before the next billing date to avoid future charges.",
       "q6": "Is my data secure?",
@@ -580,7 +580,7 @@
     "proFeatures": [
       "All CV templates",
       "Unlimited AI interviews",
-      "Personalized opportunities with match score",
+      "Personalized AI feedback with match score",
       "Personalized AI Coach 24/7",
       "Complete RIASEC diagnostic",
       "Unlimited PDF export",
