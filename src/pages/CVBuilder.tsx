@@ -44,6 +44,7 @@ export default function CVBuilder() {
   const isMobile = useIsMobile();
   const { subscribed, productId } = useSubscription();
   const isPremium = subscribed && productId === MOONJAB_PRO.product_id;
+  const { trackEvent } = useAnalytics();
 
   // Force free users into the Creativo template
   useEffect(() => {
@@ -56,6 +57,7 @@ export default function CVBuilder() {
     if (id === 'new') {
       if (user) {
         const newCV = createCV(user.id, 'Nuevo CV');
+        void trackEvent('cv_created', { cvId: newCV.id });
         navigate(`/dashboard/cvs/${newCV.id}`, { replace: true });
       }
     } else if (id) {
