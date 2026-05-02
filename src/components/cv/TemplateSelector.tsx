@@ -36,8 +36,8 @@ export default function TemplateSelector({ value, onChange, compact = false }: T
     { value: 'classic', label: 'Classic', description: 'Tradicional' },
   ];
 
-  // Guest mode: only first template available
-  const freeTemplate = 'harvard';
+  // Guest mode: only Creativo template available
+  const freeTemplate = 'creative';
 
   return (
     <Select value={value} onValueChange={(v) => onChange(v as CVTemplate)}>
