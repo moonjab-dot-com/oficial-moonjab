@@ -1,10 +1,7 @@
 import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { 
-  User, Lock, Bell, Palette, CreditCard, Shield, 
-  Link as LinkIcon, Download, Briefcase, Globe 
-} from 'lucide-react';
+import { User, Lock, Bell, Palette, CreditCard, Briefcase, Globe, Download } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -12,20 +9,16 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { ProfileSection } from '@/components/settings/ProfileSection';
 import { SecuritySection } from '@/components/settings/SecuritySection';
 import { NotificationsSection } from '@/components/settings/NotificationsSection';
-import { NotificationsSettings } from '@/components/settings/NotificationsSettings';
 import { AppearanceSection } from '@/components/settings/AppearanceSection';
 import { SubscriptionSection } from '@/components/settings/SubscriptionSection';
-import { PrivacySection } from '@/components/settings/PrivacySection';
-import { IntegrationsSection } from '@/components/settings/IntegrationsSection';
 import { LanguageSection } from '@/components/settings/LanguageSection';
 import { AccountSection } from '@/components/settings/AccountSection';
 import { RoleSection } from '@/components/settings/RoleSection';
 import { cn } from '@/lib/utils';
 
-type SettingSection = 
-  | 'profile' | 'role' | 'security' | 'notifications' 
-  | 'appearance' | 'language' | 'subscription' | 'privacy' 
-  | 'integrations' | 'account';
+type SettingSection =
+  | 'profile' | 'role' | 'security' | 'notifications'
+  | 'appearance' | 'language' | 'subscription' | 'account';
 
 export default function Settings() {
   const { t } = useTranslation();
@@ -40,8 +33,6 @@ export default function Settings() {
     { id: 'appearance', label: t('settings.appearance.title'), icon: Palette },
     { id: 'language', label: t('settings.language.title'), icon: Globe },
     { id: 'subscription', label: t('settings.subscription.title'), icon: CreditCard },
-    { id: 'privacy', label: t('settings.privacy.title'), icon: Shield },
-    { id: 'integrations', label: t('settings.integrations.title'), icon: LinkIcon },
   ] as const;
 
   const renderContent = () => {
@@ -49,13 +40,10 @@ export default function Settings() {
       case 'profile': return <ProfileSection />;
       case 'role': return <RoleSection />;
       case 'security': return <SecuritySection />;
-      case 'notifications': return (<>
-      <SEOHead title="Configuración" description="Personaliza tu experiencia en MoonJab. Ajusta tu perfil, notificaciones y preferencias." path="/settings" noindex /><NotificationsSettings /><NotificationsSection /></>);
+      case 'notifications': return <NotificationsSection />;
       case 'appearance': return <AppearanceSection />;
       case 'language': return <LanguageSection />;
       case 'subscription': return <SubscriptionSection />;
-      case 'privacy': return <PrivacySection />;
-      case 'integrations': return <IntegrationsSection />;
       case 'account': return <AccountSection />;
       default: return null;
     }
@@ -63,6 +51,7 @@ export default function Settings() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <SEOHead title="Configuración" description="Personaliza tu experiencia en MoonJab." path="/settings" noindex />
       <div className="mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-1">{t('settings.title')}</h1>
         <p className="text-sm text-muted-foreground">{t('settings.subtitle')}</p>
