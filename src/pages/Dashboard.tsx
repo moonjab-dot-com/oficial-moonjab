@@ -194,44 +194,27 @@ const Dashboard = () => {
           </motion.div>
         )}
 
+        {/* PRIMARY CTA — Always answers "What should I do next?" */}
+        <div className="mb-6">
+          <NextActionCard
+            hasCV={!!userCV}
+            cvId={userCV?.id}
+            cvScore={cvCompletionScore}
+            isPremium={isPremium}
+            isTrial={isTrial}
+            dashboardBasePath={dashboardBasePath}
+            onUpgrade={() => setUpgradeModalOpen(true)}
+          />
+        </div>
+
         {isFree && (
           <motion.div
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.03 }}
+            transition={{ duration: 0.3, delay: 0.05 }}
             className="mb-6"
           >
             <UpgradeBanner onUpgrade={() => setUpgradeModalOpen(true)} />
-          </motion.div>
-        )}
-
-        {!hasRole && (
-          <motion.div
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.05 }}
-            className="mb-8"
-          >
-            <div className="rounded-xl border border-primary/20 bg-primary/[0.04] p-5">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Compass className="h-5 w-5 text-primary" />
-                </div>
-                <div className="flex-1 space-y-2">
-                  <h2 className="font-semibold text-sm">
-                    {isTrial ? 'Prueba el diagnóstico de carrera' : 'Descubre tu perfil profesional'}
-                  </h2>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    Te recomendamos completar este diagnóstico para personalizar tu experiencia.
-                  </p>
-                  <Link to="/onboarding">
-                    <Button size="sm" variant={isTrial ? 'outline' : 'default'} className="h-8 text-xs mt-1 gap-1.5">
-                      <Sparkles className="h-3 w-3" /> Iniciar diagnóstico
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
           </motion.div>
         )}
 
