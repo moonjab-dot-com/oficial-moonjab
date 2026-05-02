@@ -351,7 +351,7 @@ export function getDashboardConfig(role: ProfessionalRole): RoleDashboardConfig 
       suggestedTasks: [
         { title: 'Análisis fundamental de empresa', xp: 130, category: 'analysis' },
         { title: 'Rebalancear portafolio', xp: 100, category: 'portfolio' },
-        { title: 'Research de oportunidades', xp: 120, category: 'research' },
+        { title: 'Research de mercado laboral', xp: 120, category: 'research' },
       ],
       resources: [
         { type: 'Curso', title: 'Investment Analysis', duration: '6h', icon: 'briefcase' },
