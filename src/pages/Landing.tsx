@@ -481,7 +481,7 @@ const LandingContent = () => {
               <p className="text-sm font-semibold mb-1">Pro</p>
               <p className="text-xs text-muted-foreground mb-5">{t('landing.pricing.proDesc')}</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <p className="text-3xl font-bold">$15</p>
+                <p className="text-3xl font-bold">$5</p>
                 <span className="text-sm text-muted-foreground">/mes</span>
               </div>
               <p className="text-xs text-muted-foreground mb-6">{t('landing.pricing.billedMonthly')}</p>
