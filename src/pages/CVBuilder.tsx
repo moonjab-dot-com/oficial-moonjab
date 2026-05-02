@@ -40,6 +40,7 @@ export default function CVBuilder() {
   const [isSaving, setIsSaving] = useState(false);
   const [showVersionHistory, setShowVersionHistory] = useState(false);
   const [showVersionCompare, setShowVersionCompare] = useState(false);
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const previewRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
   const { subscribed, productId } = useSubscription();
@@ -141,13 +142,9 @@ export default function CVBuilder() {
   const { isGuestMode } = useAuthStore();
 
   const handleExportPDF = () => {
-    // Block export for guest mode / non-premium users
+    // Conversion trigger: free / guest users see upgrade modal
     if (isGuestMode || user?.plan !== 'premium') {
-      toast({
-        title: 'Función Premium',
-        description: 'Suscríbete al plan Pro por $5/mes para descargar tus CVs en PDF.',
-        variant: 'destructive',
-      });
+      setShowUpgradeModal(true);
       return;
     }
 
