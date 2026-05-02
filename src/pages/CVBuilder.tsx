@@ -416,24 +416,6 @@ export default function CVBuilder() {
           versions={currentCV.versions}
         />
       )}
-
-
-      {/* Template Customizer Modal */}
-      {showTemplateCustomizer && currentCV && (
-        <TemplateCustomizer
-          open={showTemplateCustomizer}
-          onClose={() => setShowTemplateCustomizer(false)}
-          currentColors={templateColors}
-          onApply={(colors) => {
-            setTemplateColors(colors);
-            toast({
-              title: 'Colores aplicados',
-              description: 'El esquema de colores ha sido actualizado',
-            });
-          }}
-          template={currentCV.template}
-        />
-      )}
     </div>
   );
 }
