@@ -38,53 +38,6 @@ export type Database = {
         }
         Relationships: []
       }
-      applications: {
-        Row: {
-          cover_letter: string | null
-          created_at: string
-          cv_id: string | null
-          id: string
-          job_id: string | null
-          notes: string | null
-          opportunity_id: string | null
-          status: string | null
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          cover_letter?: string | null
-          created_at?: string
-          cv_id?: string | null
-          id?: string
-          job_id?: string | null
-          notes?: string | null
-          opportunity_id?: string | null
-          status?: string | null
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          cover_letter?: string | null
-          created_at?: string
-          cv_id?: string | null
-          id?: string
-          job_id?: string | null
-          notes?: string | null
-          opportunity_id?: string | null
-          status?: string | null
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "applications_job_id_fkey"
-            columns: ["job_id"]
-            isOneToOne: false
-            referencedRelation: "jobs"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       cvs: {
         Row: {
           certificaciones: Json | null
@@ -178,84 +131,6 @@ export type Database = {
         }
         Relationships: []
       }
-      jobs: {
-        Row: {
-          applicants_count: number | null
-          benefits: string[] | null
-          category: string | null
-          company: string
-          contract_type: string | null
-          created_at: string
-          description: string | null
-          expires_at: string | null
-          external_url: string | null
-          id: string
-          is_active: boolean | null
-          location: string | null
-          modality: string | null
-          published_at: string | null
-          requirements: string[] | null
-          salary_currency: string | null
-          salary_max: number | null
-          salary_min: number | null
-          source: string | null
-          tags: string[] | null
-          title: string
-          updated_at: string
-          views: number | null
-        }
-        Insert: {
-          applicants_count?: number | null
-          benefits?: string[] | null
-          category?: string | null
-          company: string
-          contract_type?: string | null
-          created_at?: string
-          description?: string | null
-          expires_at?: string | null
-          external_url?: string | null
-          id?: string
-          is_active?: boolean | null
-          location?: string | null
-          modality?: string | null
-          published_at?: string | null
-          requirements?: string[] | null
-          salary_currency?: string | null
-          salary_max?: number | null
-          salary_min?: number | null
-          source?: string | null
-          tags?: string[] | null
-          title: string
-          updated_at?: string
-          views?: number | null
-        }
-        Update: {
-          applicants_count?: number | null
-          benefits?: string[] | null
-          category?: string | null
-          company?: string
-          contract_type?: string | null
-          created_at?: string
-          description?: string | null
-          expires_at?: string | null
-          external_url?: string | null
-          id?: string
-          is_active?: boolean | null
-          location?: string | null
-          modality?: string | null
-          published_at?: string | null
-          requirements?: string[] | null
-          salary_currency?: string | null
-          salary_max?: number | null
-          salary_min?: number | null
-          source?: string | null
-          tags?: string[] | null
-          title?: string
-          updated_at?: string
-          views?: number | null
-        }
-        Relationships: []
-      }
       microactions: {
         Row: {
           category: string | null
@@ -343,36 +218,6 @@ export type Database = {
           rol_profesional?: string | null
           updated_at?: string
           user_role?: string | null
-        }
-        Relationships: []
-      }
-      saved_opportunities: {
-        Row: {
-          created_at: string
-          id: string
-          notes: string | null
-          opportunity_data: Json
-          status: string | null
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          notes?: string | null
-          opportunity_data: Json
-          status?: string | null
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          notes?: string | null
-          opportunity_data?: Json
-          status?: string | null
-          updated_at?: string
-          user_id?: string
         }
         Relationships: []
       }
