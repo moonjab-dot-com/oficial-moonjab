@@ -13,7 +13,7 @@ import { NextActionCard } from '@/components/dashboard/NextActionCard';
 import { UpgradeBanner } from '@/components/UpgradeBanner';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import {
-  FileText, ArrowRight, Sparkles, RotateCcw, Compass, Mic,
+  FileText, ArrowRight, Sparkles, RotateCcw, Mic,
   ChevronRight, Crown, Lock, Eye, Loader2,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
