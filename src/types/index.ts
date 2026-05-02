@@ -240,16 +240,6 @@ export interface Progress {
   interviews: number;
 }
 
-export interface JobOpportunity {
-  id: string;
-  company: string;
-  position: string;
-  match: number;
-  salary?: string;
-  location: string;
-  type: 'remote' | 'hybrid' | 'onsite';
-  logo?: string;
-}
 
 export type GoalCategory = 'career' | 'learning' | 'wellbeing' | 'networking' | 'other';
 export type GoalPriority = 'alta' | 'media' | 'baja';
