@@ -21,6 +21,7 @@ import TemplateSelector from '@/components/cv/TemplateSelector';
 import AIAnalysisModal from '@/components/cv/AIAnalysisModal';
 import VersionHistoryModal from '@/components/cv/VersionHistoryModal';
 import VersionCompareModal from '@/components/cv/VersionCompareModal';
+import { UpgradeModal } from '@/components/UpgradeModal';
 
 import { cn } from '@/lib/utils';
 import { useAI } from '@/hooks/useAI';
@@ -428,6 +429,12 @@ export default function CVBuilder() {
           versions={currentCV.versions}
         />
       )}
+
+      <UpgradeModal
+        open={showUpgradeModal}
+        onClose={() => setShowUpgradeModal(false)}
+        feature="descarga de PDF"
+      />
     </div>
   );
 }
