@@ -26,7 +26,7 @@ export const QUOTES = [
   'El éxito es la suma de pequeños esfuerzos repetidos',
   'Tu único límite es tu mente',
   'El futuro pertenece a quienes creen en sus sueños',
-  'No esperes la oportunidad perfecta, créala',
+  'No esperes el momento perfecto, créalo',
   'El progreso comienza donde termina tu zona de confort',
 ];
 

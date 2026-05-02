@@ -217,7 +217,7 @@ export const ResultsStep = ({ onComplete, riasecResult, values = [], experience 
           </li>
           <li className="flex items-start gap-2 text-sm">
             <span className="text-primary font-bold">3.</span>
-            <span>Explora oportunidades que coincidan con tu perfil {riasecResult.hollandCode}</span>
+            <span>Mejora tu CV alineado a tu perfil {riasecResult.hollandCode}</span>
           </li>
         </ul>
 

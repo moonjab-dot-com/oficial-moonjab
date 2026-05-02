@@ -123,7 +123,7 @@ export function GuestConversionModal({ open, onClose }: GuestConversionModalProp
     'Guarda tu progreso permanentemente',
     'Acceso ilimitado a todas las funcionalidades',
     'Sincronización entre dispositivos',
-    'Notificaciones de nuevas oportunidades',
+    'Notificaciones de progreso',
   ];
 
   return (

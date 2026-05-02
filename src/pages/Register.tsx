@@ -78,7 +78,7 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
-      <SEOHead title="Crear Cuenta" description="Regístrate gratis en MoonJab. Crea tu CV, practica entrevistas con IA y accede a oportunidades laborales en LATAM." path="/registro" />
+      <SEOHead title="Crear Cuenta" description="Regístrate gratis en MoonJab. Crea tu CV y practica entrevistas con IA en LATAM." path="/registro" />
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
