@@ -47,15 +47,18 @@ export default function Auth() {
 
   const resolveDestination = async (userId: string) => {
     try {
-      const [{ data: profile }, { data: accessLevel }] = await Promise.all([
-        supabase.from('profiles').select('rol_profesional').eq('id', userId).maybeSingle(),
-        supabase.from('user_access_levels').select('access_level').eq('user_id', userId).maybeSingle(),
-      ]);
+      const { data: accessLevel } = await supabase
+        .from('user_access_levels')
+        .select('access_level')
+        .eq('user_id', userId)
+        .maybeSingle();
 
       const accessRole = (accessLevel?.access_level || 'free_user') as AccessRole;
-      navigate(profile?.rol_profesional ? getDashboardBasePath(accessRole) : '/onboarding', { replace: true });
+      // Force activation: skip optional diagnostic, send directly to dashboard
+      // where the NextActionCard pushes them into CV creation immediately.
+      navigate(getDashboardBasePath(accessRole), { replace: true });
     } catch {
-      navigate('/onboarding', { replace: true });
+      navigate('/dashboard', { replace: true });
     }
   };
 
