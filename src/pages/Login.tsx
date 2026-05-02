@@ -34,6 +34,7 @@ const Login = () => {
     try {
       await login(formData.email, formData.password);
       toast.success('Bienvenido de vuelta');
+      // Force activation: send straight to CV builder so user takes action immediately
       navigate('/dashboard');
     } catch (error: any) {
       const msg = error.message || '';
