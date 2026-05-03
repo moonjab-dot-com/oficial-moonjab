@@ -51,7 +51,7 @@ export default function TemplateSelector({ value, onChange, compact = false }: T
 
   const handleChange = (v: string) => {
     const template = v as CVTemplate;
-    if (isLimited && template !== FREE_TEMPLATE) {
+    if (isLimited && !allowedTemplates.includes(template)) {
       toast({
         title: 'Plantilla Premium',
         description: 'Suscríbete para desbloquear todas las plantillas profesionales.',
@@ -70,7 +70,7 @@ export default function TemplateSelector({ value, onChange, compact = false }: T
       </SelectTrigger>
       <SelectContent className="max-h-[300px]">
         {allTemplates.map((template) => {
-          const locked = isLimited && template.value !== FREE_TEMPLATE;
+          const locked = isLimited && !allowedTemplates.includes(template.value);
           return (
             <SelectItem key={template.value} value={template.value}>
               {compact ? (
