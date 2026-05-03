@@ -125,8 +125,9 @@ export const useCVStore = create<CVState>()(
           );
           const updatedCV = updatedCVs.find((cv) => cv.id === id);
           
-          // Guardar en Supabase
-          if (updatedCV) {
+          // Guardar en Supabase (solo si es un UUID válido — los CVs de muestra/demo usan IDs locales)
+          const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
+          if (updatedCV && isUuid) {
             supabase.from('cvs').update({
               nombre_cv: updatedCV.title,
               template: updatedCV.template,
