@@ -18,14 +18,20 @@ interface TemplateSelectorProps {
   compact?: boolean;
 }
 
-const FREE_TEMPLATE: CVTemplate = 'creative';
+const GUEST_TEMPLATE: CVTemplate = 'creative';
+const FREE_TEMPLATES: CVTemplate[] = ['creative', 'executive', 'tech'];
 
 export default function TemplateSelector({ value, onChange, compact = false }: TemplateSelectorProps) {
   const { isGuestMode } = useAuthStore();
   const { subscribed, productId } = useSubscription();
   const navigate = useNavigate();
   const isPremium = subscribed && productId === MOONJAB_PRO.product_id;
-  const isLimited = !isPremium; // Both guests and free users are limited
+  const allowedTemplates: CVTemplate[] = isPremium
+    ? []
+    : isGuestMode
+    ? [GUEST_TEMPLATE]
+    : FREE_TEMPLATES;
+  const isLimited = !isPremium;
 
   const allTemplates: { value: CVTemplate; label: string; description: string }[] = [
     { value: 'creative', label: 'Creativo', description: 'Innovador' },
